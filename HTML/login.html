@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#06090D] min-h-screen flex flex-col">
+
+    <div class="relative flex-1">
+        <!-- Ảnh nền -->
+        <img src="../IMG/bg.png" alt="nền" class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Lớp phủ tối -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <header class="absolute top-0 left-0 w-full z-10 p-[10px] bg-[#111314]">
+            <div class="flex justify-around items-center">
+                <a href="index.html" title="Trang chủ"
+                    class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300">
+                    <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]" />
+                    <h1 class="font-bold text-[24px] text-[#E2E2E2]">APEX AUTOMOTIVE</h1>
+                </a>
+
+                <div class="flex justify-center gap-10">
+                    <a href="inventory.html"
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">Inventory</a>
+                    <a href="#"
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">About
+                        Us</a>
+                    <div
+                        class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300">
+                        <a href="login.html" class="font-normal text-[15px] uppercase text-[#E2E2E2] underline">ĐĂNG
+                            NHẬP</a>
+                    </div>
+                    <a href="Register.html"
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">ĐĂNG
+                        KÝ</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="relative z-[1] flex justify-center items-start pt-[140px] px-[20px] pb-[100px]">
+            <div class="bg-[#1A1C1C] w-full max-w-[400px] p-[30px] rounded-[15px] border border-[#2A2D30]">
+                <div class="flex justify-center mb-[20px]">
+                    <img src="../IMG/logo.png" alt="Logo"
+                        class="w-[60px] h-[60px] rounded-full border border-[#3A3D40]">
+                </div>
+
+                <h1 class="text-[28px] font-bold text-[#E2E2E2] text-center uppercase">Đăng nhập</h1>
+                <p class="text-[13px] text-[#8a8a8a] text-center mt-[8px] mb-[25px] leading-relaxed">Truy cập cổng thông
+                    tin đặc quyền dành cho chủ sở hữu & thành viên.</p>
+
+                <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">Email hoặc tên đăng nhập</label>
+
+                <div
+                    class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px] mt-[8px] mb-[18px]">
+                    <span class="text-[#8a8a8a]">
+                        <img src="../IMG/tk.png" class="w-[12px] h-[14px]" />
+                    </span>
+                    <input type="text" placeholder="name@example.com"
+                        class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">Mật khẩu</label>
+                    <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">Quên mật khẩu?</a>
+                </div>
+
+                <div
+                    class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px] mt-[8px] mb-[15px]">
+                    <span class="text-[#8a8a8a]">
+                        <img src="../IMG/mk.png" class="w-[12px] h-[14px]" />
+                    </span>
+                    <input type="password" placeholder="••••••••••••"
+                        class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+                    <span class="text-[#8a8a8a] cursor-pointer">
+                        <img src="../IMG/eye.png" class="w-[15px] h-[12px]" />
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-[8px] mb-[25px]">
+                    <input type="checkbox" class="w-[14px] h-[14px] accent-[#E2E2E2]">
+                    <label class="text-[13px] text-[#8a8a8a]">Ghi nhớ đăng nhập</label>
+                </div>
+
+                <button
+                    class="w-full bg-white text-black font-bold text-[15px] uppercase py-[12px] rounded-[8px] cursor-pointer hover:opacity-90 transition flex justify-center items-center gap-[8px]">Đăng
+                    nhập <span>→</span></button>
+                <div class="flex items-center gap-[10px] my-[25px]">
+                    <div class="flex-1 h-[1px] bg-[#2A2D30]"></div>
+                    <span class="text-[11px] uppercase text-[#8a8a8a] whitespace-nowrap">hoặc tiếp tục với</span>
+                    <div class="flex-1 h-[1px] bg-[#2A2D30]"></div>
+                </div>
+                <div class="flex gap-[10px]">
+                    <button
+                        class="flex-1 flex justify-center items-center gap-[8px] border border-[#2A2D30] text-[#E2E2E2] text-[14px] py-[10px] rounded-[8px] cursor-pointer hover:bg-[#1A1C1C] transition">
+                        <span>
+                            <img src="../IMG/g.png" class="w-[13px] h-[13px]" />
+                        </span>
+                        Google
+                    </button>
+                    <button
+                        class="flex-1 flex justify-center items-center gap-[8px] border border-[#2A2D30] text-[#E2E2E2] text-[14px] py-[10px] rounded-[8px] cursor-pointer hover:bg-[#1A1C1C] transition">
+                        <img src="../IMG/ap.png" class="w-[11px] h-[14px]" />
+                        Apple
+                    </button>
+                </div>
+                <p class="text-center text-[13px] text-[#8a8a8a] mt-[25px]">Chưa có tài khoản? <a href="Register.html"
+                        class="text-[#E2E2E2] font-bold hover:underline">Đăng ký ngay</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="relative z-[2] bg-[#111314] border-t border-[#2A2D30] py-[15px] px-[20px]">
+        <div class="flex justify-between items-center flex-wrap gap-[10px]">
+            <p class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">© 2024 APEX AUTOMOTIVE. &nbsp;|&nbsp;
+                PRECISION ENGINEERING & LUXURY PERFORMANCE.</p>
+            <div class="flex gap-[25px]">
+                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">Chính sách bảo mật</a>
+                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">Điều khoản dịch vụ</a>
+                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">Liên hệ hỗ trợ</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

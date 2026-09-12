@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#000000]">
+
+    <header class="w-full z-10 p-[10px] bg-[#111314]">
+        <div class="flex justify-around items-center">
+
+            <!-- LOGO -->
+            <a href="index.html" title="Trang chủ"
+                class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300">
+                <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]" />
+                <h1 class="font-bold text-[24px] text-[#E2E2E2]">APEX AUTOMOTIVE</h1>
+            </a>
+
+            <div class="flex justify-center gap-10">
+                <div
+                    class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300">
+                    <a href="#"
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 underline">Inventory</a>
+                </div>
+
+                <a href="#"
+                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">About
+                    Us</a>
+
+                <a href="login.html"
+                    class="font-normal text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">ĐĂNG
+                    NHẬP</a>
+
+                <a href="Register.html"
+                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">ĐĂNG
+                    KÝ</a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="px-[30px] m-[10px] border-b border-[#333535]">
+        <h1 class="text-[70px] text-[#E2E2E2] font-bold uppercase">INVENTORY</h1>
+        <h2 class="text-[18px] text-[#C8C6C5] mb-[20px]">Discover our curated selection of high-performance and luxury
+            vehicles. Precision engineering meets unparalleled design.</h2>
+    </div>
+
+    <div class="flex justify-between gap-[30px] px-[30px] py-[30px]">
+
+        <div class="w-[250px] h-[750px] border border-[#333535] flex flex-col items-start p-[20px]">
+            <h1 class="font-semibold uppercase text-[24px] text-[#E2E2E2]">Filters</h1>
+            <hr class="border border-[#333535] w-full my-[12px]">
+
+            <div class="w-full">
+                <label class="text-[#C8C6C5] font-bold text-[12px]">SEARCH MAKE/MODEL</label>
+
+                <div
+                    class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] px-[12px] py-[10px] mt-[8px] mb-[18px]">
+                    <input type="text" placeholder="e.g. Porsche 911"
+                        class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+                    <span class="text-[#8a8a8a]">
+                        <img src="../IMG/find.png" class="w-[12px] h-[14px]" />
+                    </span>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-[10px] text-[#C8C6C5] font-bold text-[12px] w-full">
+                BRAND
+
+                <div class="flex flex-col gap-[10px]">
+                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
+                        <input type="checkbox" class="w-[18px] h-[18px]" />
+                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">Porsche</span>
+                        <span class="text-[#333535] text-[10px]">12</span>
+                    </label>
+
+                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
+                        <input type="checkbox" class="w-[18px] h-[18px]" />
+                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">McLaren</span>
+                        <span class="text-[#333535] text-[10px]">5</span>
+                    </label>
+
+                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
+                        <input type="checkbox" class="w-[18px] h-[18px]" />
+                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">Aston Martin</span>
+                        <span class="text-[#333535] text-[10px]">8</span>
+                    </label>
+
+                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
+                        <input type="checkbox" class="w-[18px] h-[18px]" />
+                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">Ferrari</span>
+                        <span class="text-[#333535] text-[10px]">3</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-[10px] text-[#C8C6C5] font-bold text-[12px] mt-[15px] mb-[10px]">
+                PRICE RANGE
+            </div>
+
+            <div class="flex justify-between items-center gap-[10px] w-full">
+                <button
+                    class="w-[100px] h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
+                    <span class="text-[#6B7280] text-[16px]">Min</span>
+                </button>
+
+                <button
+                    class="w-[100px] h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
+                    <span class="text-[#6B7280] text-[16px]">Max</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-[10px] text-[#C8C6C5] font-bold text-[12px] mt-[15px] mb-[10px]">
+                BODY STYLE
+            </div>
+
+            <div class="flex flex-col items-center gap-[10px] w-full">
+                <button
+                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
+                    <span class="text-[#6B7280] text-[16px]">Coupe</span>
+                </button>
+
+                <button
+                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
+                    <span class="text-[#6B7280] text-[16px]">Convertible</span>
+                </button>
+
+                <button
+                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
+                    <span class="text-[#6B7280] text-[16px]">SUV</span>
+                </button>
+
+                <button
+                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
+                    <span class="text-[#6B7280] text-[16px]">Sedan</span>
+                </button>
+            </div>
+
+            <div class="flex justify-center text-[#C8C6C5] font-bold text-[12px] mt-[40px] w-full">
+                <button
+                    class="w-full h-[40px] border border-[#333535] bg-[#000000] active:bg-[#2c2c2e] transition duration-150 flex justify-center items-center">
+                    <span class="text-[#6B7280] text-[16px] font-bold">RESET FILTERS</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 min-w-0">
+
+            <div class="flex justify-between items-center px-[10px] py-[20px] border-b border-[#333535] mb-[30px]">
+                <p class="text-[#C8C6C5] text-[16px]">Showing 28 vehicles</p>
+
+                <div class="flex items-center gap-[10px]">
+                    <p class="text-[#8a8a8a] text-[12px]">SORT BY:</p>
+
+                    <div class="flex items-center gap-[30px] cursor-pointer">
+                        <p class="text-[#E2E2E2] text-[16px]">Newest Arrivals</p>
+                        <img src="../IMG/down.png" alt="xuống" class="w-[9px] h-[4px]" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-[20px]">
+
+                <!-- CARD 1 -->
+                <div class="w-full border border-[#333535] bg-[#111314]">
+                    <a href="RacingPorche.html" class="aspect-[16/10] overflow-hidden block">
+                        <img src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1153_a5_rgb.jpg"
+                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
+                    </a>
+
+                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
+                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2024 Porsche 911 GT3 RS</h1>
+                        <h2 class="text-[16px] text-[#C8C6C5]">Agate Grey Metallic / Race-Tex Interior</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">1,250 mi</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span
+                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">7-Speed PDK</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4.0L Flat-6</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col gap-[4px] p-[15px]">
+                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
+                        <p class="text-[24px] font-bold text-[#FFFFFF]">$295,000</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="w-full border border-[#333535] bg-[#111314]">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpjdlYLOVvMQKgKFPPx9r1vsNH_PjNi9JeGHhFRMW4xE8aJ0MDYDXJnk&s=10"
+                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
+                    </div>
+
+                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
+                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2023 McLaren 720S Spider</h1>
+                        <h2 class="text-[16px] text-[#C8C6C5]">Silica White / Jet Black Alcantara</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">3,400 mi</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span
+                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">7-Speed SSG</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4.0L Twin-Turbo V8</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col gap-[4px] p-[15px]">
+                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
+                        <p class="text-[24px] font-bold text-[#FFFFFF]">$310,500</p>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="w-full border border-[#333535] bg-[#111314]">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://4kwallpapers.com/images/wallpapers/aston-martin-dbs-3840x2160-10165.jpeg"
+                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
+                    </div>
+
+                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
+                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2022 Aston Martin DBS</h1>
+                        <h2 class="text-[16px] text-[#C8C6C5]">Minotaur Green / Bitter Chocolate</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">8,100 mi</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span
+                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">8-Speed Auto</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">5.2L Twin-Turbo V12</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col gap-[4px] p-[15px]">
+                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
+                        <p class="text-[24px] font-bold text-[#FFFFFF]">$275,000</p>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="w-full border border-[#333535] bg-[#111314]">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://www.cauleyferrari.com/imagetag/449/55/l/Used-2021-Ferrari-F8-Tributo-1663763281.jpg"
+                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
+                    </div>
+
+                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
+                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2021 Ferrari F8 Tributo</h1>
+                        <h2 class="text-[16px] text-[#C8C6C5]">Rosso Corsa / Nero Leather</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4,200 mi</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span
+                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">7-Speed Dual-Clutch</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4.0L Flat-6</span>
+                        </div>
+
+                        <div class="flex flex-col gap-[6px]">
+                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
+                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col gap-[4px] p-[15px]">
+                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
+                        <p class="text-[24px] font-bold text-[#FFFFFF]">$295,000</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
