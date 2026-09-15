@@ -15,28 +15,28 @@
 
             <!-- LOGO -->
             <a href="../index.html" title="Trang chủ"
-                class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300">
+                class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
                 <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]" />
                 <h1 class="font-bold text-[24px] text-[#E2E2E2]">APEX AUTOMOTIVE</h1>
             </a>
 
             <div class="flex justify-center gap-10">
                 <div
-                    class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300">
+                    class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
                     <a href="#"
-                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 underline">Inventory</a>
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 ">Inventory</a>
                 </div>
 
                 <a href="#"
-                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">About
+                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">About
                     Us</a>
 
                 <a href="login.html"
-                    class="font-normal text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">ĐĂNG
+                    class="font-normal text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">ĐĂNG
                     NHẬP</a>
 
                 <a href="Register.html"
-                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300">ĐĂNG
+                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">ĐĂNG
                     KÝ</a>
             </div>
 
@@ -151,15 +151,22 @@
         <div class="flex-1 min-w-0">
 
             <div class="flex justify-between items-center px-[10px] py-[20px] border-b border-[#333535] mb-[30px]">
-                <p class="text-[#C8C6C5] text-[16px]">Showing 28 vehicles</p>
-
-                <div class="flex items-center gap-[10px]">
-                    <p class="text-[#8a8a8a] text-[12px]">SORT BY:</p>
-
-                    <div class="flex items-center gap-[30px] cursor-pointer">
-                        <p class="text-[#E2E2E2] text-[16px]">Newest Arrivals</p>
-                        <img src="../IMG/down.png" alt="xuống" class="w-[9px] h-[4px]" />
+               <div class="w-full md:w-3/4">
+                <!-- Sort & Results count -->
+                <div class="flex justify-between items-center mb-6 border-b border-surface-variant pb-4">
+                    <span class="font-body-md text-body-md text-secondary">Showing <strong
+                            class="text-on-surface font-semibold">28</strong> vehicles</span>
+                    <div class="flex items-center gap-2">
+                        <span class="font-label-caps text-label-caps text-secondary uppercase">Sort By:</span>
+                        <select
+                            class="bg-transparent border-none text-on-surface font-body-md focus:ring-0 cursor-pointer pr-8">
+                            <option class="bg-surface" value="newest">Newest Arrivals</option>
+                            <option class="bg-surface" value="price_asc">Price: Low to High</option>
+                            <option class="bg-surface" value="price_desc">Price: High to Low</option>
+                            <option class="bg-surface" value="mileage_asc">Mileage: Lowest First</option>
+                        </select>
                     </div>
+                </div>
                 </div>
             </div>
 
