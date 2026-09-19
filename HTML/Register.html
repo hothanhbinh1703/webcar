@@ -1,63 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký </title>
+    <title>Đăng ký - APEX AUTOMOTIVE</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 
-<body class="relative min-h-screen">
+<body class="relative min-h-screen bg-[#06090D]">
+
+    <!-- HEADER -->
     <header class="absolute top-0 left-0 w-full z-10 p-[10px] bg-[#111314]">
+
         <div class="flex justify-around items-center">
+
+            <!-- LOGO -->
             <a href="../index.html" title="Trang chủ"
-                class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full ">
-                <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]" />
-                <h1 class="font-bold text-[24px] text-[#E2E2E2]"> APEX AUTOMOTIVE </h1>
+                class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+
+                <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]">
+
+                <h1 class="font-bold text-[24px] text-[#E2E2E2]">
+                    APEX AUTOMOTIVE
+                </h1>
+
             </a>
+
+
+            <!-- MENU -->
             <div class="flex justify-center gap-10">
+
                 <a href="inventory.html"
-                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full  ">
-                    Inventory </a>
-                <a href="#"
                     class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
-                    About Us </a>
+                    Inventory
+                </a>
+
+                <a href="AboutUs.html"
+                    class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                    About Us
+                </a>
+
                 <a href="login.html"
                     class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
-                    ĐĂng Nhập </a>
+                    ĐĂNG NHẬP
+                </a>
 
+
+                <!-- REGISTER -->
                 <div
-                    class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300 underline">
-                    <a href="Register.html" class="font-normal text-[15px] uppercase text-[#E2E2E2]"> Đăng Ký </a>
+                    class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300">
+
+                    <a href="Register.html" class="font-normal text-[15px] uppercase text-[#E2E2E2]">
+                        ĐĂNG KÝ
+                    </a>
+
                 </div>
 
             </div>
-        </div>
-    </header>
-    <img src="../IMG/bg1.png" alt="nền" class="absolute inset-0 w-full h-full object-cover" />
 
+        </div>
+
+    </header>
+
+
+    <!-- BACKGROUND -->
+    <img src="../IMG/bg1.png" alt="nền" class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- OVERLAY -->
     <div class="absolute inset-0 bg-black/80"></div>
 
+
+    <!-- CONTENT -->
     <div class="relative z-[1] flex flex-col min-h-screen">
 
         <main class="flex flex-col items-center w-full flex-1 pt-[100px] px-[20px] pb-[30px]">
 
+
+            <!-- TITLE -->
             <div class="max-w-[400px] flex flex-col items-center text-center mb-[20px]">
-                <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]" />
+
+                <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]">
+
                 <h1 class="font-bold text-[30px] text-[#E2E2E2] mt-4">
                     Precision Awaits.
                 </h1>
+
                 <p class="text-[16px] text-[#C8C6C5] mt-2">
                     Create your Apex Automotive account.
                 </p>
+
             </div>
 
-                <!-- fullname -->
+
+            <!-- REGISTER FORM -->
             <div
                 class="w-full max-w-[500px] rounded-[15px] border border-[#2A2D30] bg-[#111314] p-[30px] flex flex-col gap-5">
 
+
+                <!-- FULL NAME -->
                 <div class="flex flex-col gap-2">
 
                     <label for="fullname" class="text-[12px] font-semibold uppercase tracking-wide text-[#C8C6C5]">
@@ -67,16 +108,17 @@
                     <div
                         class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px]">
 
-                        <img src="../IMG/tk1.png" class="w-[12px] h-[14px]" />
+                        <img src="../IMG/tk1.png" class="w-[12px] h-[14px]">
 
                         <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
                             class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
 
                     </div>
+
                 </div>
 
 
-                <!-- Email Address -->
+                <!-- EMAIL -->
                 <div class="flex flex-col gap-2">
 
                     <label for="email" class="text-[12px] font-semibold uppercase tracking-wide text-[#C8C6C5]">
@@ -86,29 +128,37 @@
                     <div
                         class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px]">
 
-                        <img src="../IMG/email.png" class="w-[12px] h-[14px]" />
+                        <img src="../IMG/email.png" class="w-[12px] h-[14px]">
 
                         <input type="email" id="email" name="email" placeholder="name@example.com"
                             class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
 
                     </div>
+
                 </div>
 
 
-                <!-- Phone Number -->
+                <!-- PHONE -->
                 <div class="flex flex-col gap-2">
+
                     <label for="phone" class="text-[12px] font-semibold uppercase tracking-wide text-[#C8C6C5]">
                         Phone Number
                     </label>
+
                     <div
                         class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px]">
-                        <img src="../IMG/phone.png" class="w-[12px] h-[14px]" />
+
+                        <img src="../IMG/phone.png" class="w-[12px] h-[14px]">
+
                         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
                             class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+
                     </div>
+
                 </div>
 
-                <!-- Password -->
+
+                <!-- PASSWORD -->
                 <div class="flex flex-col gap-2">
 
                     <label for="password" class="text-[12px] font-semibold uppercase tracking-wide text-[#C8C6C5]">
@@ -118,15 +168,17 @@
                     <div
                         class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px]">
 
-                        <img src="../IMG/mk1.png" class="w-[12px] h-[14px]" />
+                        <img src="../IMG/mk1.png" class="w-[12px] h-[14px]">
 
                         <input type="password" id="password" name="password" placeholder="Create a password"
                             class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
 
                     </div>
+
                 </div>
 
-                <!-- Confirm Password -->
+
+                <!-- CONFIRM PASSWORD -->
                 <div class="flex flex-col gap-2">
 
                     <label for="confirm_password"
@@ -137,31 +189,43 @@
                     <div
                         class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px]">
 
-                        <img src="../IMG/key.png" class="w-[12px] h-[14px]" />
+                        <img src="../IMG/key.png" class="w-[12px] h-[14px]">
 
                         <input type="password" id="confirm_password" name="confirm_password"
                             placeholder="Re-enter your password"
                             class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
 
                     </div>
+
                 </div>
 
-                <!-- Register Button -->
-                <button type="submit"
+
+                <!-- REGISTER BUTTON -->
+                <button id="registerBtn" type="button"
                     class="w-full h-[48px] mt-2 rounded-[8px] bg-[#E2E2E2] text-[#111314] font-bold text-[14px] uppercase tracking-wide flex justify-center items-center gap-2 hover:bg-white transition">
+
                     Register Account
+
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2.5">
 
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+
                     </svg>
+
                 </button>
 
-                <!-- Divider -->
-                <hr class="border-t border-[#2A2D30] mt-1" />
+
+                <!-- MESSAGE -->
+                <p id="registerMessage" class="text-center text-[13px] min-h-[20px]">
+                </p>
 
 
-                <!-- Sign in -->
+                <!-- DIVIDER -->
+                <hr class="border-t border-[#2A2D30] mt-1">
+
+
+                <!-- LOGIN -->
                 <p class="text-center text-[14px] text-[#C8C6C5]">
 
                     Already have an account?
@@ -178,7 +242,8 @@
 
         </main>
 
-        <!-- Footer -->
+
+        <!-- FOOTER -->
         <footer class="w-full bg-[#111314] border-t border-[#2A2D30] py-[15px] px-[20px]">
 
             <div class="flex justify-between items-center flex-wrap gap-[10px]">
@@ -192,9 +257,11 @@
                 </p>
 
                 <div class="flex gap-[25px]">
+
                     <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">
                         Chính sách bảo mật
                     </a>
+
                     <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">
                         Điều khoản dịch vụ
                     </a>
@@ -202,10 +269,220 @@
                     <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">
                         Liên hệ hỗ trợ
                     </a>
+
                 </div>
+
             </div>
+
         </footer>
+
     </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const fullname = document.getElementById("fullname");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm_password");
+
+        const registerBtn = document.getElementById("registerBtn");
+        const registerMessage = document.getElementById("registerMessage");
+
+
+        registerBtn.addEventListener("click", function () {
+
+            const nameValue = fullname.value.trim();
+            const emailValue = email.value.trim();
+            const phoneValue = phone.value.trim();
+            const passwordValue = password.value.trim();
+            const confirmValue = confirmPassword.value.trim();
+
+
+            // =========================
+            // KIỂM TRA RỖNG
+            // =========================
+
+            if (
+                nameValue === "" ||
+                emailValue === "" ||
+                phoneValue === "" ||
+                passwordValue === "" ||
+                confirmValue === ""
+            ) {
+
+                alert("Đăng ký thất bại!\nVui lòng nhập đầy đủ thông tin.");
+
+                registerMessage.textContent =
+                    "Vui lòng nhập đầy đủ thông tin.";
+
+                registerMessage.className =
+                    "text-center text-[13px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+
+            // =========================
+            // KIỂM TRA EMAIL
+            // =========================
+
+            const emailRegex =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(emailValue)) {
+
+                alert("Đăng ký thất bại!\nEmail không hợp lệ.");
+
+                registerMessage.textContent =
+                    "Email không hợp lệ.";
+
+                registerMessage.className =
+                    "text-center text-[13px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+
+            // =========================
+            // KIỂM TRA SỐ ĐIỆN THOẠI
+            // =========================
+
+            const phoneRegex = /^[0-9]{9,11}$/;
+
+            if (!phoneRegex.test(phoneValue)) {
+
+                alert("Đăng ký thất bại!\nSố điện thoại không hợp lệ.");
+
+                registerMessage.textContent =
+                    "Số điện thoại phải từ 9 đến 11 số.";
+
+                registerMessage.className =
+                    "text-center text-[13px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+
+            // =========================
+            // KIỂM TRA MẬT KHẨU
+            // =========================
+
+            if (passwordValue.length < 6) {
+
+                alert("Đăng ký thất bại!\nMật khẩu phải có ít nhất 6 ký tự.");
+
+                registerMessage.textContent =
+                    "Mật khẩu phải có ít nhất 6 ký tự.";
+
+                registerMessage.className =
+                    "text-center text-[13px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+
+            // =========================
+            // KIỂM TRA CONFIRM PASSWORD
+            // =========================
+
+            if (passwordValue !== confirmValue) {
+
+                alert("Đăng ký thất bại!\nMật khẩu xác nhận không trùng khớp.");
+
+                registerMessage.textContent =
+                    "Mật khẩu xác nhận không trùng khớp.";
+
+                registerMessage.className =
+                    "text-center text-[13px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+
+            // =========================
+            // KIỂM TRA EMAIL ĐÃ TỒN TẠI
+            // =========================
+
+            const oldUser = localStorage.getItem("registeredUser");
+
+            if (oldUser) {
+
+                const user = JSON.parse(oldUser);
+
+                if (user.email === emailValue) {
+
+                    alert("Đăng ký thất bại!\nEmail này đã được đăng ký.");
+
+                    registerMessage.textContent =
+                        "Email này đã được đăng ký.";
+
+                    registerMessage.className =
+                        "text-center text-[13px] min-h-[20px] text-red-400";
+
+                    return;
+                }
+
+            }
+
+
+            // =========================
+            // TẠO USER
+            // =========================
+
+            const newUser = {
+
+                fullname: nameValue,
+
+                email: emailValue,
+
+                phone: phoneValue,
+
+                password: passwordValue,
+
+                role: "customer"
+
+            };
+
+
+            // =========================
+            // LƯU USER
+            // =========================
+
+            localStorage.setItem(
+                "registeredUser",
+                JSON.stringify(newUser)
+            );
+
+
+            // =========================
+            // THÔNG BÁO THÀNH CÔNG
+            // =========================
+
+            alert("Đăng ký thành công!\nTài khoản của bạn đã được tạo.");
+
+            registerMessage.textContent =
+                "Đăng ký thành công! Đang chuyển đến trang đăng nhập...";
+
+            registerMessage.className =
+                "text-center text-[13px] min-h-[20px] text-green-400";
+
+
+            // =========================
+            // CHUYỂN LOGIN
+            // =========================
+
+            setTimeout(function () {
+
+                window.location.href = "login.html";
+
+            }, 800);
+
+        });
+
+    </script>
 
 </body>
 

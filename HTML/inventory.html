@@ -1,15 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inventory | APEX AUTOMOTIVE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&family=Space+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#e2e2e2", "on-primary-container": "#636565", "on-background": "#e3e2e5",
+                        "secondary-fixed-dim": "#c6c6c6", "tertiary": "#ffffff", "primary": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c7", "error-container": "#93000a", "surface": "#121316",
+                        "outline-variant": "#444748", "surface-container-low": "#1a1c1e", "background": "#121316",
+                        "surface-container": "#1e2022", "on-surface-variant": "#c4c7c8",
+                        "surface-container-high": "#292a2d", "surface-bright": "#38393c", "surface-variant": "#343538",
+                        "on-secondary": "#2f3131", "error": "#ffb4ab", "primary-container": "#e2e2e2",
+                        "surface-tint": "#c6c6c7", "secondary-container": "#454747", "surface-dim": "#121316",
+                        "inverse-primary": "#5d5f5f", "surface-container-highest": "#343538",
+                        "primary-fixed": "#e2e2e2", "on-surface": "#e3e2e5", "outline": "#8e9192",
+                        "surface-container-lowest": "#0d0e11", "inverse-on-surface": "#2f3033",
+                        "on-primary": "#2f3131", "on-error": "#690005", "inverse-surface": "#e3e2e5",
+                        "on-secondary-container": "#b5b5b5", "secondary": "#c6c6c6"
+                    },
+                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                    spacing: {
+                        gutter: "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-mobile": "1rem",
+                        "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem",
+                        "space-xl": "2.5rem", margin: "3rem"
+                    },
+                    fontFamily: {
+                        "label-technical-sm": ["Space Mono"], "label-numeric-lg": ["Space Mono"],
+                        "label-numeric-md": ["Space Mono"], "body-sm": ["Inter"], "body-md": ["Inter"],
+                        "body-lg": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"],
+                        "label-caps-xs": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "label-technical-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.12em", fontWeight: "500" }],
+                        "label-numeric-lg": ["20px", { lineHeight: "24px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-numeric-md": ["14px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "700" }],
+                        "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+                        "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+                        "display-lg": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "700" }],
+                        "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "title-lg": ["18px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+                        "label-caps-xs": ["10px", { lineHeight: "12px", letterSpacing: "0.16em", fontWeight: "700" }]
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 
-<body class="bg-[#000000]">
+<body
+    class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
 
+    <!-- ================= HEADER (giữ nguyên từ code 1) ================= -->
     <header class="w-full z-10 p-[10px] bg-[#111314]">
         <div class="flex justify-around items-center">
 
@@ -43,304 +104,851 @@
         </div>
     </header>
 
-    <div class="px-[30px] m-[10px] border-b border-[#333535]">
-        <h1 class="text-[70px] text-[#E2E2E2] font-bold uppercase">INVENTORY</h1>
-        <h2 class="text-[18px] text-[#C8C6C5] mb-[20px]">Discover our curated selection of high-performance and luxury
-            vehicles. Precision engineering meets unparalleled design.</h2>
-    </div>
+    <main class="w-full bg-surface-container-lowest min-h-screen">
 
-    <div class="flex justify-between gap-[30px] px-[30px] py-[30px]">
+        <!-- ================= TOP COMMAND BAR ================= -->
+        <section class="w-full px-gutter py-space-lg">
+            <div class="max-w-[1440px] mx-auto flex flex-col gap-space-md">
 
-        <div class="w-[250px] h-[750px] border border-[#333535] flex flex-col items-start p-[20px]">
-            <h1 class="font-semibold uppercase text-[24px] text-[#E2E2E2]">Filters</h1>
-            <hr class="border border-[#333535] w-full my-[12px]">
+                <div class="flex items-center gap-space-sm text-on-surface-variant">
+                    <span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span
+                        class="font-label-technical-sm text-label-technical-sm tracking-widest text-primary uppercase">APEX
+                        AUTOMOTIVE</span>
+                    <span class="text-outline-variant font-label-technical-sm">/</span>
+                    <span class="font-label-technical-sm text-label-technical-sm text-on-surface-variant uppercase">Live
+                        inventory</span>
+                </div>
 
-            <div class="w-full">
-                <label class="text-[#C8C6C5] font-bold text-[12px]">SEARCH MAKE/MODEL</label>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                    <div class="space-y-space-xs max-w-[640px]">
+                        <h1 class="font-headline-xl text-headline-xl text-primary uppercase tracking-tight">Inventory
+                        </h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">Discover our curated selection of
+                            high-performance and luxury vehicles. Precision engineering meets unparalleled design.</p>
+                    </div>
 
-                <div
-                    class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] px-[12px] py-[10px] mt-[8px] mb-[18px]">
-                    <input type="text" placeholder="e.g. Porsche 911"
-                        class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
-                    <span class="text-[#8a8a8a]">
-                        <img src="../IMG/find.png" class="w-[12px] h-[14px]" />
-                    </span>
+                    <div class="flex flex-wrap items-center gap-space-sm">
+                        <!-- Sort -->
+                        <div class="relative bg-surface-container-low rounded-lg">
+                            <label class="sr-only" for="sort">Sort by</label>
+                            <select id="sort"
+                                class="appearance-none bg-surface-container-low text-primary font-label-technical-sm text-label-technical-sm pl-space-md pr-10 py-space-sm rounded-lg focus:outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer uppercase">
+                                <option value="newest">Sort by: Newest arrivals</option>
+                                <option value="price-desc">Price: high to low</option>
+                                <option value="price-asc">Price: low to high</option>
+                                <option value="mileage">Lowest mileage</option>
+                            </select>
+                            <img src="../IMG/down.png" alt="" aria-hidden="true"
+                                class="absolute right-space-md top-1/2 -translate-y-1/2 w-[9px] h-[4px] pointer-events-none" />
+                        </div>
+
+                        <!-- View switcher -->
+                        <div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+                            <button id="view-grid" type="button" aria-label="Grid view" aria-pressed="true"
+                                data-active="true"
+                                class="px-space-sm py-1 rounded flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors data-[active=true]:bg-surface-container-high data-[active=true]:text-primary">
+                                <span class="material-symbols-outlined text-[18px]">grid_view</span>
+                            </button>
+                            <button id="view-list" type="button" aria-label="List view" aria-pressed="false"
+                                data-active="false"
+                                class="px-space-sm py-1 rounded flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors data-[active=true]:bg-surface-container-high data-[active=true]:text-primary">
+                                <span class="material-symbols-outlined text-[18px]">view_list</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search + body style chips -->
+                <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-space-md pt-space-xs">
+                    <div
+                        class="relative flex-1 bg-surface-container-low rounded-lg focus-within:bg-surface-container transition-colors">
+                        <img src="../IMG/find.png" alt="" aria-hidden="true"
+                            class="absolute left-space-md top-1/2 -translate-y-1/2 w-[12px] h-[14px] pointer-events-none" />
+                        <label class="sr-only" for="search">Search make or model</label>
+                        <input id="search" type="text" placeholder="Search make or model, e.g. Porsche 911"
+                            class="w-full bg-transparent pl-11 pr-space-md py-3 text-primary placeholder:text-outline font-body-md text-body-md focus:outline-none">
+                    </div>
+
+                    <div id="bodyChips"
+                        class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        <button type="button" data-body-chip="all" data-active="true" aria-pressed="true"
+                            class="whitespace-nowrap px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:text-primary hover:bg-surface-container font-label-technical-sm text-label-technical-sm uppercase tracking-wider transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">All</button>
+                        <button type="button" data-body-chip="coupe" data-active="false" aria-pressed="false"
+                            class="whitespace-nowrap px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:text-primary hover:bg-surface-container font-label-technical-sm text-label-technical-sm uppercase tracking-wider transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">Coupe</button>
+                        <button type="button" data-body-chip="convertible" data-active="false" aria-pressed="false"
+                            class="whitespace-nowrap px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:text-primary hover:bg-surface-container font-label-technical-sm text-label-technical-sm uppercase tracking-wider transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">Convertible</button>
+                        <button type="button" data-body-chip="suv" data-active="false" aria-pressed="false"
+                            class="whitespace-nowrap px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:text-primary hover:bg-surface-container font-label-technical-sm text-label-technical-sm uppercase tracking-wider transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">SUV</button>
+                        <button type="button" data-body-chip="sedan" data-active="false" aria-pressed="false"
+                            class="whitespace-nowrap px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:text-primary hover:bg-surface-container font-label-technical-sm text-label-technical-sm uppercase tracking-wider transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">Sedan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SIDEBAR + GRID ================= -->
+        <section class="w-full px-gutter pb-space-xl">
+            <div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-start gap-space-lg">
+
+                <!-- SIDEBAR -->
+                <aside
+                    class="w-full lg:w-[280px] lg:shrink-0 lg:sticky lg:top-6 bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-lg shadow-xl">
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-space-xs">
+                            <span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+                            <span
+                                class="font-label-caps-xs text-label-caps-xs uppercase tracking-widest text-primary">Filters</span>
+                        </div>
+                        <button type="button" data-reset
+                            class="font-label-technical-sm text-label-technical-sm text-on-surface-variant hover:text-primary transition-colors uppercase">Reset</button>
+                    </div>
+
+                    <!-- Brand -->
+                    <div class="flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-technical-sm text-label-technical-sm uppercase text-on-surface-variant tracking-wider">Brand</span>
+                        <div class="grid grid-cols-1 gap-1.5 pt-1">
+                            <label
+                                class="group flex items-center justify-between p-2 rounded hover:bg-surface-container transition-colors cursor-pointer">
+                                <div class="flex items-center gap-space-sm">
+                                    <input type="checkbox" value="porsche" data-brand-filter
+                                        class="w-4 h-4 rounded bg-surface-container-highest accent-primary cursor-pointer">
+                                    <span
+                                        class="font-body-sm text-body-sm text-on-surface group-hover:text-primary">Porsche</span>
+                                </div>
+                                <span class="font-label-technical-sm text-label-technical-sm text-outline">12</span>
+                            </label>
+                            <label
+                                class="group flex items-center justify-between p-2 rounded hover:bg-surface-container transition-colors cursor-pointer">
+                                <div class="flex items-center gap-space-sm">
+                                    <input type="checkbox" value="mclaren" data-brand-filter
+                                        class="w-4 h-4 rounded bg-surface-container-highest accent-primary cursor-pointer">
+                                    <span
+                                        class="font-body-sm text-body-sm text-on-surface group-hover:text-primary">McLaren</span>
+                                </div>
+                                <span class="font-label-technical-sm text-label-technical-sm text-outline">5</span>
+                            </label>
+                            <label
+                                class="group flex items-center justify-between p-2 rounded hover:bg-surface-container transition-colors cursor-pointer">
+                                <div class="flex items-center gap-space-sm">
+                                    <input type="checkbox" value="aston-martin" data-brand-filter
+                                        class="w-4 h-4 rounded bg-surface-container-highest accent-primary cursor-pointer">
+                                    <span
+                                        class="font-body-sm text-body-sm text-on-surface group-hover:text-primary">Aston
+                                        Martin</span>
+                                </div>
+                                <span class="font-label-technical-sm text-label-technical-sm text-outline">8</span>
+                            </label>
+                            <label
+                                class="group flex items-center justify-between p-2 rounded hover:bg-surface-container transition-colors cursor-pointer">
+                                <div class="flex items-center gap-space-sm">
+                                    <input type="checkbox" value="ferrari" data-brand-filter
+                                        class="w-4 h-4 rounded bg-surface-container-highest accent-primary cursor-pointer">
+                                    <span
+                                        class="font-body-sm text-body-sm text-on-surface group-hover:text-primary">Ferrari</span>
+                                </div>
+                                <span class="font-label-technical-sm text-label-technical-sm text-outline">3</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price range -->
+                    <div class="flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-technical-sm text-label-technical-sm uppercase text-on-surface-variant tracking-wider">Price
+                            range (USD)</span>
+                        <div class="grid grid-cols-2 gap-space-sm pt-1">
+                            <label class="sr-only" for="minPrice">Minimum price</label>
+                            <input id="minPrice" type="number" inputmode="numeric" min="0" step="5000" placeholder="Min"
+                                class="w-full bg-surface-container border border-outline-variant/40 rounded-lg px-space-sm py-2 text-primary font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:border-primary transition-colors">
+                            <label class="sr-only" for="maxPrice">Maximum price</label>
+                            <input id="maxPrice" type="number" inputmode="numeric" min="0" step="5000" placeholder="Max"
+                                class="w-full bg-surface-container border border-outline-variant/40 rounded-lg px-space-sm py-2 text-primary font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Model year -->
+                    <div class="flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-technical-sm text-label-technical-sm uppercase text-on-surface-variant tracking-wider">Model
+                            year</span>
+                        <div class="grid grid-cols-4 gap-1.5 pt-1">
+                            <button type="button" data-year-btn="2024" data-active="false" aria-pressed="false"
+                                class="py-1.5 rounded bg-surface-container text-on-surface hover:text-primary font-label-technical-sm text-label-technical-sm transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">2024</button>
+                            <button type="button" data-year-btn="2023" data-active="false" aria-pressed="false"
+                                class="py-1.5 rounded bg-surface-container text-on-surface hover:text-primary font-label-technical-sm text-label-technical-sm transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">2023</button>
+                            <button type="button" data-year-btn="2022" data-active="false" aria-pressed="false"
+                                class="py-1.5 rounded bg-surface-container text-on-surface hover:text-primary font-label-technical-sm text-label-technical-sm transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">2022</button>
+                            <button type="button" data-year-btn="2021" data-active="false" aria-pressed="false"
+                                class="py-1.5 rounded bg-surface-container text-on-surface hover:text-primary font-label-technical-sm text-label-technical-sm transition-colors data-[active=true]:bg-primary data-[active=true]:text-on-primary data-[active=true]:font-bold">2021</button>
+                        </div>
+                    </div>
+
+                    <!-- Mileage -->
+                    <div class="flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-technical-sm text-label-technical-sm uppercase text-on-surface-variant tracking-wider">Mileage</span>
+                        <div class="flex flex-col gap-1.5 pt-1">
+                            <label
+                                class="flex items-center gap-space-sm p-1.5 rounded hover:bg-surface-container cursor-pointer">
+                                <input type="radio" name="mileage" value="any" checked
+                                    class="w-3.5 h-3.5 accent-primary cursor-pointer">
+                                <span class="font-body-sm text-body-sm text-on-surface">Any mileage</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-space-sm p-1.5 rounded hover:bg-surface-container cursor-pointer">
+                                <input type="radio" name="mileage" value="lt1000"
+                                    class="w-3.5 h-3.5 accent-primary cursor-pointer">
+                                <span class="font-body-sm text-body-sm text-on-surface">Under 1,000 mi</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-space-sm p-1.5 rounded hover:bg-surface-container cursor-pointer">
+                                <input type="radio" name="mileage" value="mid"
+                                    class="w-3.5 h-3.5 accent-primary cursor-pointer">
+                                <span class="font-body-sm text-body-sm text-on-surface">1,000 – 5,000 mi</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-space-sm p-1.5 rounded hover:bg-surface-container cursor-pointer">
+                                <input type="radio" name="mileage" value="gt5000"
+                                    class="w-3.5 h-3.5 accent-primary cursor-pointer">
+                                <span class="font-body-sm text-body-sm text-on-surface">Over 5,000 mi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" data-reset
+                        class="w-full py-3 bg-surface-container text-on-surface-variant font-label-technical-sm text-label-technical-sm tracking-wider uppercase rounded-lg hover:text-primary transition-colors">Reset
+                        filters</button>
+                </aside>
+
+                <!-- RIGHT COLUMN -->
+                <div class="flex-1 min-w-0 w-full flex flex-col gap-space-lg">
+
+                    <!-- Stats strip -->
+                    <div
+                        class="w-full bg-surface-container-low rounded-xl p-space-md grid grid-cols-2 sm:grid-cols-4 gap-space-md">
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-caps-xs text-label-caps-xs uppercase text-outline tracking-widest">In
+                                stock</span>
+                            <span class="font-label-numeric-lg text-label-numeric-lg text-primary mt-1">28</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">vehicles</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-caps-xs text-label-caps-xs uppercase text-outline tracking-widest">Brands</span>
+                            <span class="font-label-numeric-lg text-label-numeric-lg text-primary mt-1">4</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">marques</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-caps-xs text-label-caps-xs uppercase text-outline tracking-widest">Starting
+                                from</span>
+                            <span class="font-label-numeric-lg text-label-numeric-lg text-primary mt-1">$275,000</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">listed below</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-caps-xs text-label-caps-xs uppercase text-outline tracking-widest">Inspection</span>
+                            <span class="font-label-numeric-lg text-label-numeric-lg text-primary mt-1">210 pt</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">every vehicle</span>
+                        </div>
+                    </div>
+
+                    <p class="font-body-md text-body-md text-on-surface-variant" aria-live="polite">
+                        Showing <span id="resultCount" class="text-primary font-semibold">4</span> of 28 vehicles
+                    </p>
+
+                    <!-- ============ CARDS ============ -->
+                    <div id="grid" data-view="grid"
+                        class="group/grid grid grid-cols-1 md:grid-cols-2 md:data-[view=list]:grid-cols-1 gap-space-lg">
+
+                        <!-- CARD 1 -->
+                        <article data-brand="porsche" data-body="coupe" data-year="2024" data-price="295000"
+                            data-mileage="1250"
+                            class="group flex flex-col md:group-data-[view=list]/grid:flex-row bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <div
+                                class="relative w-full aspect-[16/10] bg-surface-container-lowest overflow-hidden md:group-data-[view=list]/grid:w-[42%] md:group-data-[view=list]/grid:aspect-auto md:group-data-[view=list]/grid:min-h-[300px] md:group-data-[view=list]/grid:shrink-0">
+                                <a href="RacingPorche.html" class="block absolute inset-0"
+                                    aria-label="View 2024 Porsche 911 GT3 RS">
+                                    <img src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1153_a5_rgb.jpg"
+                                        alt="2024 Porsche 911 GT3 RS" loading="lazy"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                                </a>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-90 pointer-events-none">
+                                </div>
+                                <div
+                                    class="absolute top-space-sm left-space-sm flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md pointer-events-none">
+                                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                    <span
+                                        class="font-label-caps-xs text-label-caps-xs text-primary tracking-widest uppercase">New
+                                        arrival</span>
+                                </div>
+                                <button type="button" data-fav aria-label="Save vehicle" aria-pressed="false"
+                                    data-on="false"
+                                    class="group/fav absolute top-space-sm right-space-sm z-10 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors data-[on=true]:text-primary">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] group-data-[on=true]/fav:[font-variation-settings:'FILL'_1]">favorite</span>
+                                </button>
+                                <span
+                                    class="absolute bottom-space-xs right-space-sm font-label-technical-sm text-label-technical-sm text-primary pointer-events-none">0-100
+                                    km/h: 3.2s</span>
+                            </div>
+
+                            <div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+                                <div>
+                                    <div
+                                        class="flex items-center justify-between text-on-surface-variant font-label-technical-sm text-label-technical-sm mb-1 uppercase">
+                                        <span>Porsche</span><span>2024 model</span>
+                                    </div>
+                                    <h2 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">
+                                        <a href="RacingPorche.html" class="hover:underline">2024 Porsche 911 GT3 RS</a>
+                                    </h2>
+                                    <p data-sub class="font-body-sm text-body-sm text-on-surface-variant mt-1">Agate
+                                        Grey Metallic / Race-Tex Interior</p>
+                                </div>
+
+                                <dl
+                                    class="grid grid-cols-2 gap-x-space-md gap-y-space-sm bg-surface-container-high/60 p-space-sm rounded-lg">
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Mileage</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            1,250 mi</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Transmission</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            7-Speed PDK</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Engine</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            4.0L Flat-6</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Drivetrain</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            RWD</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="flex items-end justify-between gap-space-sm">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-label-caps-xs text-label-caps-xs text-outline uppercase">Price</span>
+                                        <span
+                                            class="font-label-numeric-lg text-label-numeric-lg text-primary">$295,000</span>
+                                    </div>
+                                    <a href="RacingPorche.html"
+                                        class="px-space-md py-2.5 bg-primary text-on-primary font-label-technical-sm text-label-technical-sm font-bold tracking-wider uppercase rounded-lg hover:bg-secondary-fixed transition-colors">View
+                                        details</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- CARD 2 -->
+                        <article data-brand="mclaren" data-body="convertible" data-year="2023" data-price="310500"
+                            data-mileage="3400"
+                            class="group flex flex-col md:group-data-[view=list]/grid:flex-row bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <div
+                                class="relative w-full aspect-[16/10] bg-surface-container-lowest overflow-hidden md:group-data-[view=list]/grid:w-[42%] md:group-data-[view=list]/grid:aspect-auto md:group-data-[view=list]/grid:min-h-[300px] md:group-data-[view=list]/grid:shrink-0">
+                                <a href="#" class="block absolute inset-0" aria-label="View 2023 McLaren 720S Spider">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpjdlYLOVvMQKgKFPPx9r1vsNH_PjNi9JeGHhFRMW4xE8aJ0MDYDXJnk&s=10"
+                                        alt="2023 McLaren 720S Spider" loading="lazy"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                                </a>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-90 pointer-events-none">
+                                </div>
+                                <div
+                                    class="absolute top-space-sm left-space-sm flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md pointer-events-none">
+                                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                    <span
+                                        class="font-label-caps-xs text-label-caps-xs text-primary tracking-widest uppercase">New
+                                        arrival</span>
+                                </div>
+                                <button type="button" data-fav aria-label="Save vehicle" aria-pressed="false"
+                                    data-on="false"
+                                    class="group/fav absolute top-space-sm right-space-sm z-10 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors data-[on=true]:text-primary">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] group-data-[on=true]/fav:[font-variation-settings:'FILL'_1]">favorite</span>
+                                </button>
+                                <span
+                                    class="absolute bottom-space-xs right-space-sm font-label-technical-sm text-label-technical-sm text-primary pointer-events-none">0-100
+                                    km/h: 2.9s</span>
+                            </div>
+
+                            <div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+                                <div>
+                                    <div
+                                        class="flex items-center justify-between text-on-surface-variant font-label-technical-sm text-label-technical-sm mb-1 uppercase">
+                                        <span>McLaren</span><span>2023 model</span>
+                                    </div>
+                                    <h2 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">
+                                        <a href="#" class="hover:underline">2023 McLaren 720S Spider</a>
+                                    </h2>
+                                    <p data-sub class="font-body-sm text-body-sm text-on-surface-variant mt-1">Silica
+                                        White / Jet Black Alcantara</p>
+                                </div>
+
+                                <dl
+                                    class="grid grid-cols-2 gap-x-space-md gap-y-space-sm bg-surface-container-high/60 p-space-sm rounded-lg">
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Mileage</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            3,400 mi</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Transmission</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            7-Speed SSG</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Engine</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            4.0L Twin-Turbo V8</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Drivetrain</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            RWD</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="flex items-end justify-between gap-space-sm">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-label-caps-xs text-label-caps-xs text-outline uppercase">Price</span>
+                                        <span
+                                            class="font-label-numeric-lg text-label-numeric-lg text-primary">$310,500</span>
+                                    </div>
+                                    <a href="#"
+                                        class="px-space-md py-2.5 bg-primary text-on-primary font-label-technical-sm text-label-technical-sm font-bold tracking-wider uppercase rounded-lg hover:bg-secondary-fixed transition-colors">View
+                                        details</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- CARD 3 -->
+                        <article data-brand="aston-martin" data-body="coupe" data-year="2022" data-price="275000"
+                            data-mileage="8100"
+                            class="group flex flex-col md:group-data-[view=list]/grid:flex-row bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <div
+                                class="relative w-full aspect-[16/10] bg-surface-container-lowest overflow-hidden md:group-data-[view=list]/grid:w-[42%] md:group-data-[view=list]/grid:aspect-auto md:group-data-[view=list]/grid:min-h-[300px] md:group-data-[view=list]/grid:shrink-0">
+                                <a href="#" class="block absolute inset-0" aria-label="View 2022 Aston Martin DBS">
+                                    <img src="https://4kwallpapers.com/images/wallpapers/aston-martin-dbs-3840x2160-10165.jpeg"
+                                        alt="2022 Aston Martin DBS" loading="lazy"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                                </a>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-90 pointer-events-none">
+                                </div>
+                                <div
+                                    class="absolute top-space-sm left-space-sm flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md pointer-events-none">
+                                    <span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+                                    <span
+                                        class="font-label-caps-xs text-label-caps-xs text-primary tracking-widest uppercase">In
+                                        stock</span>
+                                </div>
+                                <button type="button" data-fav aria-label="Save vehicle" aria-pressed="false"
+                                    data-on="false"
+                                    class="group/fav absolute top-space-sm right-space-sm z-10 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors data-[on=true]:text-primary">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] group-data-[on=true]/fav:[font-variation-settings:'FILL'_1]">favorite</span>
+                                </button>
+                                <span
+                                    class="absolute bottom-space-xs right-space-sm font-label-technical-sm text-label-technical-sm text-primary pointer-events-none">0-100
+                                    km/h: 3.4s</span>
+                            </div>
+
+                            <div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+                                <div>
+                                    <div
+                                        class="flex items-center justify-between text-on-surface-variant font-label-technical-sm text-label-technical-sm mb-1 uppercase">
+                                        <span>Aston Martin</span><span>2022 model</span>
+                                    </div>
+                                    <h2 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">
+                                        <a href="#" class="hover:underline">2022 Aston Martin DBS</a>
+                                    </h2>
+                                    <p data-sub class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                                        Minotaur Green / Bitter Chocolate</p>
+                                </div>
+
+                                <dl
+                                    class="grid grid-cols-2 gap-x-space-md gap-y-space-sm bg-surface-container-high/60 p-space-sm rounded-lg">
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Mileage</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            8,100 mi</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Transmission</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            8-Speed Auto</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Engine</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            5.2L Twin-Turbo V12</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Drivetrain</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            RWD</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="flex items-end justify-between gap-space-sm">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-label-caps-xs text-label-caps-xs text-outline uppercase">Price</span>
+                                        <span
+                                            class="font-label-numeric-lg text-label-numeric-lg text-primary">$275,000</span>
+                                    </div>
+                                    <a href="#"
+                                        class="px-space-md py-2.5 bg-primary text-on-primary font-label-technical-sm text-label-technical-sm font-bold tracking-wider uppercase rounded-lg hover:bg-secondary-fixed transition-colors">View
+                                        details</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- CARD 4 -->
+                        <article data-brand="ferrari" data-body="coupe" data-year="2021" data-price="295000"
+                            data-mileage="4200"
+                            class="group flex flex-col md:group-data-[view=list]/grid:flex-row bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <div
+                                class="relative w-full aspect-[16/10] bg-surface-container-lowest overflow-hidden md:group-data-[view=list]/grid:w-[42%] md:group-data-[view=list]/grid:aspect-auto md:group-data-[view=list]/grid:min-h-[300px] md:group-data-[view=list]/grid:shrink-0">
+                                <a href="#" class="block absolute inset-0" aria-label="View 2021 Ferrari F8 Tributo">
+                                    <img src="https://www.cauleyferrari.com/imagetag/449/55/l/Used-2021-Ferrari-F8-Tributo-1663763281.jpg"
+                                        alt="2021 Ferrari F8 Tributo" loading="lazy"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                                </a>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-90 pointer-events-none">
+                                </div>
+                                <div
+                                    class="absolute top-space-sm left-space-sm flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md pointer-events-none">
+                                    <span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+                                    <span
+                                        class="font-label-caps-xs text-label-caps-xs text-primary tracking-widest uppercase">In
+                                        stock</span>
+                                </div>
+                                <button type="button" data-fav aria-label="Save vehicle" aria-pressed="false"
+                                    data-on="false"
+                                    class="group/fav absolute top-space-sm right-space-sm z-10 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors data-[on=true]:text-primary">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] group-data-[on=true]/fav:[font-variation-settings:'FILL'_1]">favorite</span>
+                                </button>
+                                <span
+                                    class="absolute bottom-space-xs right-space-sm font-label-technical-sm text-label-technical-sm text-primary pointer-events-none">0-100
+                                    km/h: 2.9s</span>
+                            </div>
+
+                            <div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+                                <div>
+                                    <div
+                                        class="flex items-center justify-between text-on-surface-variant font-label-technical-sm text-label-technical-sm mb-1 uppercase">
+                                        <span>Ferrari</span><span>2021 model</span>
+                                    </div>
+                                    <h2 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">
+                                        <a href="#" class="hover:underline">2021 Ferrari F8 Tributo</a>
+                                    </h2>
+                                    <p data-sub class="font-body-sm text-body-sm text-on-surface-variant mt-1">Rosso
+                                        Corsa / Nero Leather</p>
+                                </div>
+
+                                <dl
+                                    class="grid grid-cols-2 gap-x-space-md gap-y-space-sm bg-surface-container-high/60 p-space-sm rounded-lg">
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Mileage</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            4,200 mi</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Transmission</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            7-Speed Dual-Clutch</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Engine</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            4.0L Flat-6</dd>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <dt class="font-label-caps-xs text-label-caps-xs text-outline uppercase">
+                                            Drivetrain</dt>
+                                        <dd class="font-label-numeric-md text-label-numeric-md text-primary mt-0.5">
+                                            RWD</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="flex items-end justify-between gap-space-sm">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-label-caps-xs text-label-caps-xs text-outline uppercase">Price</span>
+                                        <span
+                                            class="font-label-numeric-lg text-label-numeric-lg text-primary">$295,000</span>
+                                    </div>
+                                    <a href="#"
+                                        class="px-space-md py-2.5 bg-primary text-on-primary font-label-technical-sm text-label-technical-sm font-bold tracking-wider uppercase rounded-lg hover:bg-secondary-fixed transition-colors">View
+                                        details</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Empty state -->
+                        <div id="emptyState"
+                            class="hidden col-span-full bg-surface-container-low rounded-xl p-space-xl text-center flex flex-col items-center gap-space-sm">
+                            <span class="material-symbols-outlined text-[32px] text-outline">search_off</span>
+                            <p class="font-title-lg text-title-lg text-primary">No vehicles match these filters</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Try a different brand or price
+                                range, or clear the filters.</p>
+                            <button type="button" data-reset
+                                class="mt-space-xs px-space-md py-2.5 bg-primary text-on-primary font-label-technical-sm text-label-technical-sm font-bold tracking-wider uppercase rounded-lg hover:bg-secondary-fixed transition-colors">Clear
+                                filters</button>
+                        </div>
+                    </div>
+
+                    <!-- Pagination (giao diện tĩnh) -->
+                    <nav aria-label="Pagination"
+                        class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-md">
+                        <span
+                            class="font-label-technical-sm text-label-technical-sm text-outline uppercase tracking-wider">Page
+                            1 of 7</span>
+                        <div class="flex items-center gap-2">
+                            <button type="button" aria-label="Previous page"
+                                class="w-10 h-10 rounded-lg bg-surface-container text-outline hover:text-primary flex items-center justify-center transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+                            </button>
+                            <button type="button" aria-current="page"
+                                class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-numeric-md text-label-numeric-md flex items-center justify-center">1</button>
+                            <button type="button"
+                                class="w-10 h-10 rounded-lg bg-surface-container text-on-surface hover:text-primary font-label-numeric-md text-label-numeric-md flex items-center justify-center transition-colors">2</button>
+                            <button type="button"
+                                class="w-10 h-10 rounded-lg bg-surface-container text-on-surface hover:text-primary font-label-numeric-md text-label-numeric-md flex items-center justify-center transition-colors">3</button>
+                            <span class="px-1 text-outline">…</span>
+                            <button type="button"
+                                class="w-10 h-10 rounded-lg bg-surface-container text-on-surface hover:text-primary font-label-numeric-md text-label-numeric-md flex items-center justify-center transition-colors">7</button>
+                            <button type="button" aria-label="Next page"
+                                class="w-10 h-10 rounded-lg bg-surface-container text-on-surface hover:text-primary flex items-center justify-center transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer
+        class="w-full bg-surface-container-lowest border-t border-outline-variant/30 text-on-surface-variant pt-space-xl pb-space-lg">
+        <div class="max-w-[1440px] mx-auto px-gutter">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-outline-variant/20">
+
+                <div class="flex flex-col gap-space-md">
+                    <h2 class="font-headline-md text-title-lg tracking-widest text-primary uppercase">APEX AUTOMOTIVE
+                    </h2>
+                    <p class="font-body-sm text-on-surface-variant leading-relaxed">Precision engineering for those who
+                        demand the absolute best in automotive performance and luxury.</p>
+                </div>
+
+                <div class="flex flex-col gap-space-sm">
+                    <h3 class="font-label-caps-xs text-label-caps-xs text-primary uppercase tracking-widest">Information
+                    </h3>
+                    <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Showroom Location</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact Details</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Opening Hours</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-space-sm">
+                    <h3 class="font-label-caps-xs text-label-caps-xs text-primary uppercase tracking-widest">Account
+                    </h3>
+                    <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+                        <li><a href="../index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Đăng nhập</a></li>
+                        <li><a href="Register.html" class="hover:text-primary transition-colors">Đăng ký</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-space-sm">
+                    <h3 class="font-label-caps-xs text-label-caps-xs text-primary uppercase tracking-widest">Newsletter
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">New arrivals and events, straight to
+                        your inbox.</p>
+                    <form onsubmit="event.preventDefault()" class="mt-space-xs">
+                        <div
+                            class="flex items-center bg-surface-container-low border border-outline-variant/40 rounded-lg overflow-hidden focus-within:border-primary transition-colors">
+                            <label class="sr-only" for="footerEmail">Email</label>
+                            <input id="footerEmail" type="email" placeholder="Enter your email"
+                                class="bg-transparent px-space-sm py-2 text-on-surface font-body-sm w-full focus:outline-none placeholder:text-outline">
+                            <button type="submit" aria-label="Subscribe"
+                                class="px-space-sm py-2 text-primary hover:text-secondary transition-colors flex items-center justify-center">
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-[10px] text-[#C8C6C5] font-bold text-[12px] w-full">
-                BRAND
-
-                <div class="flex flex-col gap-[10px]">
-                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
-                        <input type="checkbox" class="w-[18px] h-[18px]" />
-                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">Porsche</span>
-                        <span class="text-[#333535] text-[10px]">12</span>
-                    </label>
-
-                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
-                        <input type="checkbox" class="w-[18px] h-[18px]" />
-                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">McLaren</span>
-                        <span class="text-[#333535] text-[10px]">5</span>
-                    </label>
-
-                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
-                        <input type="checkbox" class="w-[18px] h-[18px]" />
-                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">Aston Martin</span>
-                        <span class="text-[#333535] text-[10px]">8</span>
-                    </label>
-
-                    <label class="flex items-center justify-between gap-[10px] cursor-pointer">
-                        <input type="checkbox" class="w-[18px] h-[18px]" />
-                        <span class="text-[16px] text-[#E2E2E2] font-semibold flex-1">Ferrari</span>
-                        <span class="text-[#333535] text-[10px]">3</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-[10px] text-[#C8C6C5] font-bold text-[12px] mt-[15px] mb-[10px]">
-                PRICE RANGE
-            </div>
-
-            <div class="flex justify-between items-center gap-[10px] w-full">
-                <button
-                    class="w-[100px] h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
-                    <span class="text-[#6B7280] text-[16px]">Min</span>
-                </button>
-
-                <button
-                    class="w-[100px] h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
-                    <span class="text-[#6B7280] text-[16px]">Max</span>
-                </button>
-            </div>
-
-            <div class="flex flex-col gap-[10px] text-[#C8C6C5] font-bold text-[12px] mt-[15px] mb-[10px]">
-                BODY STYLE
-            </div>
-
-            <div class="flex flex-col items-center gap-[10px] w-full">
-                <button
-                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
-                    <span class="text-[#6B7280] text-[16px]">Coupe</span>
-                </button>
-
-                <button
-                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
-                    <span class="text-[#6B7280] text-[16px]">Convertible</span>
-                </button>
-
-                <button
-                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
-                    <span class="text-[#6B7280] text-[16px]">SUV</span>
-                </button>
-
-                <button
-                    class="w-full h-[40px] bg-[#000000] border border-[#333535] active:bg-[#2c2c2e] transition duration-150">
-                    <span class="text-[#6B7280] text-[16px]">Sedan</span>
-                </button>
-            </div>
-
-            <div class="flex justify-center text-[#C8C6C5] font-bold text-[12px] mt-[40px] w-full">
-                <button
-                    class="w-full h-[40px] border border-[#333535] bg-[#000000] active:bg-[#2c2c2e] transition duration-150 flex justify-center items-center">
-                    <span class="text-[#6B7280] text-[16px] font-bold">RESET FILTERS</span>
-                </button>
+            <div
+                class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-technical-sm text-label-technical-sm text-on-surface-variant/70">
+                <p>© 2024 APEX AUTOMOTIVE GROUP.</p>
+                <p>PRECISION ENGINEERING.</p>
             </div>
         </div>
+    </footer>
 
-        <div class="flex-1 min-w-0">
+    <!-- ================= LOGIC: lọc, sắp xếp, đổi kiểu xem, lưu yêu thích ================= -->
+    <script>
+        (() => {
+            const $ = s => document.querySelector(s);
+            const $$ = s => [...document.querySelectorAll(s)];
 
-            <div class="flex justify-between items-center px-[10px] py-[20px] border-b border-[#333535] mb-[30px]">
-                <p class="text-[#C8C6C5] text-[16px]">Showing 28 vehicles</p>
+            const grid = $('#grid');
+            const empty = $('#emptyState');
+            const cards = [...grid.querySelectorAll('article')];
+            const order = new Map(cards.map((c, i) => [c, i]));
+            const countEl = $('#resultCount');
 
-                <div class="flex items-center gap-[10px]">
-                    <p class="text-[#8a8a8a] text-[12px]">SORT BY:</p>
+            const search = $('#search');
+            const sortEl = $('#sort');
+            const minEl = $('#minPrice');
+            const maxEl = $('#maxPrice');
+            const brandBoxes = $$('[data-brand-filter]');
+            const bodyChips = $$('[data-body-chip]');
+            const yearBtns = $$('[data-year-btn]');
+            const mileageRadios = $$('input[name="mileage"]');
 
-                    <div class="flex items-center gap-[30px] cursor-pointer">
-                        <p class="text-[#E2E2E2] text-[16px]">Newest Arrivals</p>
-                        <img src="../IMG/down.png" alt="xuống" class="w-[9px] h-[4px]" />
-                    </div>
-                </div>
-            </div>
+            let body = 'all';
+            let year = null;
 
-            <div class="grid grid-cols-2 gap-[20px]">
+            // chuỗi tìm kiếm: tên xe + hãng + màu/nội thất
+            cards.forEach(c => {
+                c.dataset.search = (c.querySelector('h2').textContent + ' ' + c.dataset.brand.replace('-', ' ') + ' ' +
+                    c.querySelector('[data-sub]').textContent).toLowerCase();
+            });
 
-                <!-- CARD 1 -->
-                <div class="w-full border border-[#333535] bg-[#111314]">
-                    <a href="RacingPorche.html" class="aspect-[16/10] overflow-hidden block">
-                        <img src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1153_a5_rgb.jpg"
-                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
-                    </a>
+            const setPressed = (el, on) => {
+                el.dataset.active = String(on);
+                el.setAttribute('aria-pressed', String(on));
+            };
 
-                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
-                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2024 Porsche 911 GT3 RS</h1>
-                        <h2 class="text-[16px] text-[#C8C6C5]">Agate Grey Metallic / Race-Tex Interior</h2>
-                    </div>
+            const sorters = {
+                'newest': (a, b) => (b.dataset.year - a.dataset.year) || (order.get(a) - order.get(b)),
+                'price-desc': (a, b) => b.dataset.price - a.dataset.price,
+                'price-asc': (a, b) => a.dataset.price - b.dataset.price,
+                'mileage': (a, b) => a.dataset.mileage - b.dataset.mileage
+            };
 
-                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
+            function apply() {
+                const q = search.value.trim().toLowerCase();
+                const brands = brandBoxes.filter(b => b.checked).map(b => b.value);
+                const min = parseFloat(minEl.value);
+                const max = parseFloat(maxEl.value);
+                const mil = mileageRadios.find(r => r.checked).value;
 
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">1,250 mi</span>
-                        </div>
+                let shown = 0;
+                cards.forEach(c => {
+                    const d = c.dataset;
+                    const price = +d.price, miles = +d.mileage;
+                    const ok =
+                        (!q || d.search.includes(q)) &&
+                        (!brands.length || brands.includes(d.brand)) &&
+                        (body === 'all' || d.body === body) &&
+                        (year === null || d.year === year) &&
+                        (isNaN(min) || price >= min) &&
+                        (isNaN(max) || price <= max) &&
+                        (mil === 'any' ||
+                            (mil === 'lt1000' && miles < 1000) ||
+                            (mil === 'mid' && miles >= 1000 && miles <= 5000) ||
+                            (mil === 'gt5000' && miles > 5000));
+                    c.classList.toggle('hidden', !ok);
+                    if (ok) shown++;
+                });
 
-                        <div class="flex flex-col gap-[6px]">
-                            <span
-                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">7-Speed PDK</span>
-                        </div>
+                [...cards].sort(sorters[sortEl.value]).forEach(c => grid.insertBefore(c, empty));
+                empty.classList.toggle('hidden', shown !== 0);
+                countEl.textContent = shown;
+            }
 
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4.0L Flat-6</span>
-                        </div>
+            function reset() {
+                search.value = '';
+                minEl.value = '';
+                maxEl.value = '';
+                sortEl.value = 'newest';
+                brandBoxes.forEach(b => (b.checked = false));
+                mileageRadios.find(r => r.value === 'any').checked = true;
+                body = 'all';
+                year = null;
+                bodyChips.forEach(c => setPressed(c, c.dataset.bodyChip === 'all'));
+                yearBtns.forEach(b => setPressed(b, false));
+                apply();
+            }
 
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
-                        </div>
+            search.addEventListener('input', apply);
+            minEl.addEventListener('input', apply);
+            maxEl.addEventListener('input', apply);
+            sortEl.addEventListener('change', apply);
+            brandBoxes.forEach(b => b.addEventListener('change', apply));
+            mileageRadios.forEach(r => r.addEventListener('change', apply));
 
-                    </div>
+            bodyChips.forEach(chip => chip.addEventListener('click', () => {
+                body = chip.dataset.bodyChip;
+                bodyChips.forEach(c => setPressed(c, c === chip));
+                apply();
+            }));
 
-                    <div class="flex flex-col gap-[4px] p-[15px]">
-                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
-                        <p class="text-[24px] font-bold text-[#FFFFFF]">$295,000</p>
-                    </div>
-                </div>
+            yearBtns.forEach(btn => btn.addEventListener('click', () => {
+                year = year === btn.dataset.yearBtn ? null : btn.dataset.yearBtn; // bấm lần nữa để bỏ chọn
+                yearBtns.forEach(b => setPressed(b, b.dataset.yearBtn === year));
+                apply();
+            }));
 
-                <!-- CARD 2 -->
-                <div class="w-full border border-[#333535] bg-[#111314]">
-                    <div class="aspect-[16/10] overflow-hidden">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpjdlYLOVvMQKgKFPPx9r1vsNH_PjNi9JeGHhFRMW4xE8aJ0MDYDXJnk&s=10"
-                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
-                    </div>
+            $$('[data-reset]').forEach(b => b.addEventListener('click', reset));
 
-                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
-                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2023 McLaren 720S Spider</h1>
-                        <h2 class="text-[16px] text-[#C8C6C5]">Silica White / Jet Black Alcantara</h2>
-                    </div>
+            // Đổi kiểu xem lưới / danh sách
+            const btnGrid = $('#view-grid');
+            const btnList = $('#view-list');
+            function setView(view) {
+                grid.dataset.view = view;
+                setPressed(btnGrid, view === 'grid');
+                setPressed(btnList, view === 'list');
+            }
+            btnGrid.addEventListener('click', () => setView('grid'));
+            btnList.addEventListener('click', () => setView('list'));
 
-                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
+            // Lưu xe yêu thích
+            $$('[data-fav]').forEach(btn => btn.addEventListener('click', () => {
+                const on = btn.dataset.on !== 'true';
+                btn.dataset.on = String(on);
+                btn.setAttribute('aria-pressed', String(on));
+            }));
 
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">3,400 mi</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span
-                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">7-Speed SSG</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4.0L Twin-Turbo V8</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
-                        </div>
-
-                    </div>
-
-                    <div class="flex flex-col gap-[4px] p-[15px]">
-                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
-                        <p class="text-[24px] font-bold text-[#FFFFFF]">$310,500</p>
-                    </div>
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="w-full border border-[#333535] bg-[#111314]">
-                    <div class="aspect-[16/10] overflow-hidden">
-                        <img src="https://4kwallpapers.com/images/wallpapers/aston-martin-dbs-3840x2160-10165.jpeg"
-                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
-                    </div>
-
-                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
-                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2022 Aston Martin DBS</h1>
-                        <h2 class="text-[16px] text-[#C8C6C5]">Minotaur Green / Bitter Chocolate</h2>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">8,100 mi</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span
-                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">8-Speed Auto</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">5.2L Twin-Turbo V12</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
-                        </div>
-
-                    </div>
-
-                    <div class="flex flex-col gap-[4px] p-[15px]">
-                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
-                        <p class="text-[24px] font-bold text-[#FFFFFF]">$275,000</p>
-                    </div>
-                </div>
-
-                <!-- CARD 4 -->
-                <div class="w-full border border-[#333535] bg-[#111314]">
-                    <div class="aspect-[16/10] overflow-hidden">
-                        <img src="https://www.cauleyferrari.com/imagetag/449/55/l/Used-2021-Ferrari-F8-Tributo-1663763281.jpg"
-                            class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300" />
-                    </div>
-
-                    <div class="flex flex-col gap-[6px] p-[15px] border-b border-[#333535]">
-                        <h1 class="text-[24px] text-[#E2E2E2] font-bold">2021 Ferrari F8 Tributo</h1>
-                        <h2 class="text-[16px] text-[#C8C6C5]">Rosso Corsa / Nero Leather</h2>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-x-[40px] gap-y-[20px] p-[15px] border-b border-[#333535]">
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Mileage</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4,200 mi</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span
-                                class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Transmission</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">7-Speed Dual-Clutch</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Engine</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">4.0L Flat-6</span>
-                        </div>
-
-                        <div class="flex flex-col gap-[6px]">
-                            <span class="text-[12px] font-bold uppercase text-[#8a8a8a] tracking-wide">Drivetrain</span>
-                            <span class="text-[20px] font-semibold text-[#E2E2E2]">RWD</span>
-                        </div>
-
-                    </div>
-
-                    <div class="flex flex-col gap-[4px] p-[15px]">
-                        <p class="text-[12px] font-bold text-[#C8C6C5]">PRICE</p>
-                        <p class="text-[24px] font-bold text-[#FFFFFF]">$295,000</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
+            apply();
+        })();
+    </script>
 </body>
 
 </html>

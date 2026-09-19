@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="relative m-0">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#111314]/95 backdrop-blur-md border-b border-[#2A2D30]">
+
+        <div class="w-full px-[40px] py-[12px] flex justify-between items-center">
+
+            <!-- LOGO -->
+            <a href="../index.html" title="Trang chủ"
+                class="flex items-center gap-[10px] cursor-pointer group">
+
+                <img src="../IMG/logo.png" alt="LogoXe"
+                    class="w-[55px] h-[55px] rounded-[10px] group-hover:scale-105 transition duration-300">
+
+                <div>
+
+                    <h1 class="font-bold text-[22px] tracking-[1px] text-[#E2E2E2]">
+                        APEX AUTOMOTIVE
+                    </h1>
+
+                    <p class="text-[9px] tracking-[3px] text-[#888]">
+                        PREMIUM AUTOMOTIVE
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- MENU -->
+            <nav class="flex items-center gap-[35px]">
+
+                <a href="../index.html"
+                    class="relative text-[13px] font-medium tracking-[1px] text-[#C8C6C5] hover:text-white transition duration-300 after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+                    HOME
+                </a>
+
+                <a href="inventory.html"
+                    class="relative text-[13px] font-medium tracking-[1px] text-[#C8C6C5] hover:text-white transition duration-300 after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+                    INVENTORY
+                </a>
+
+                <a href="AboutUs.html"
+                    class="relative text-[13px] font-medium tracking-[1px] text-[#C8C6C5] hover:text-white transition duration-300 after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+                    ABOUT US
+                </a>
+
+                <!-- NOTIFICATION -->
+                <button
+                    class="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-[#333535] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition duration-300">
+
+                    <span class="text-[18px]">♧</span>
+
+                    <span
+                        class="absolute top-[7px] right-[7px] w-[6px] h-[6px] bg-white rounded-full">
+                    </span>
+
+                </button>
+
+                <!-- USER -->
+                <div id="userArea" class="relative">
+
+                    <button onclick="toggleUserMenu()"
+                        class="flex items-center gap-[10px] cursor-pointer group">
+
+                        <!-- AVATAR -->
+                        <div id="userAvatar"
+                            class="w-[42px] h-[42px] rounded-full bg-[#1A1C1C] border border-[#333535] flex items-center justify-center text-[#E2E2E2] font-bold text-[15px] group-hover:border-[#777] transition duration-300">
+                            U
+                        </div>
+
+                        <!-- USER INFO -->
+                        <div class="text-left">
+
+                            <p id="userName"
+                                class="text-[13px] font-semibold text-[#E2E2E2]">
+                                User
+                            </p>
+
+                            <p id="userEmail"
+                                class="text-[10px] text-[#777] max-w-[150px] truncate">
+                                user@gmail.com
+                            </p>
+
+                        </div>
+
+                        <span
+                            class="text-[10px] text-[#888] group-hover:text-white transition">
+                            ▼
+                        </span>
+
+                    </button>
+
+                    <!-- DROPDOWN -->
+                    <div id="userMenu"
+                        class="hidden absolute right-0 top-[58px] w-[210px] bg-[#111314] border border-[#2A2D30] rounded-[10px] shadow-2xl overflow-hidden">
+
+                        <div class="px-[18px] py-[15px] border-b border-[#2A2D30]">
+
+                            <p class="text-[10px] tracking-[2px] text-[#777] mb-[4px]">
+                                ACCOUNT
+                            </p>
+
+                            <p id="menuUserName"
+                                class="text-[14px] font-semibold text-[#E2E2E2]">
+                                User
+                            </p>
+
+                        </div>
+
+                        <a href="user.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span>◉</span>
+                            MY PROFILE
+
+                        </a>
+
+                        <a href="inventory.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span>◇</span>
+                            INVENTORY
+
+                        </a>
+
+                        <button onclick="logout()"
+                            class="w-full flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-red-400 hover:bg-[#1A1C1C] transition">
+
+                            <span></span>
+                            LOG OUT
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <div class="relative w-full h-screen overflow-hidden">
+
+        <!-- ẢNH 1 -->
+        <img src="https://autopro8.mediacdn.vn/134505113543774208/2024/11/24/a3-1732452118807-17324521193891592114970.jpg"
+            alt="SiêuXe 1"
+            class="hero-bg-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100">
+
+        <!-- ẢNH 2 -->
+        <img src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1150_a5_rgb.jpg"
+            alt="SiêuXe 2"
+            class="hero-bg-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0">
+
+        <!-- ẢNH 3 -->
+        <img src="https://autopro8.mediacdn.vn/134505113543774208/2026/8/18/anh-chup-man-hinh-2026-08-18-luc-102357-1787038729847-1787038730389399748879.png"
+            alt="SiêuXe 3"
+            class="hero-bg-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0">
+
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+
+            <h2 class="text-white font-bold text-[60px] uppercase leading-tight">
+                Precision Engineered
+            </h2>
+
+            <p class="text-[#E2E2E2] text-[16px] mt-4 max-w-[600px]">
+                Experience the apex of automotive performance. Uncompromising luxury meets visceral power in our curated collection of high-end vehicles.
+            </p>
+
+            <!-- ĐÃ SỬA ĐƯỜNG DẪN -->
+            <a href="inventory.html"
+                class="mt-8 border border-white text-white text-[13px] uppercase tracking-wider px-6 py-3 cursor-pointer hover:bg-white hover:text-black transition hover:scale-110 duration-300">
+                Explore Inventory
+            </a>
+
+            <!-- 3 CHẤM -->
+            <div class="flex gap-[10px] mt-8">
+
+                <button type="button" data-slide="0"
+                    class="hero-dot w-[10px] h-[10px] rounded-full bg-white transition duration-300">
+                </button>
+
+                <button type="button" data-slide="1"
+                    class="hero-dot w-[10px] h-[10px] rounded-full bg-white/40 transition duration-300">
+                </button>
+
+                <button type="button" data-slide="2"
+                    class="hero-dot w-[10px] h-[10px] rounded-full bg-white/40 transition duration-300">
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATS -->
+    <div class="bg-[#1A1C1E] w-full flex justify-around items-center py-[30px]">
+
+        <div>
+
+            <p class="text-[16px] text-[#C4C7C8]">
+                ACCELERATION
+            </p>
+
+            <div class="flex gap-[5px]">
+
+                <p class="text-[16px] text-[#FFFFFF] font-bold">
+                    2.4
+                </p>
+
+                <span class="text-[16px] text-[#C4C7C8] font-bold">
+                    0-100 KM/H
+                </span>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <p class="text-[16px] text-[#C4C7C8]">
+                VELOCITY CEILING
+            </p>
+
+            <div class="flex gap-[5px]">
+
+                <p class="text-[16px] text-[#FFFFFF] font-bold">
+                    400
+                </p>
+
+                <span class="text-[16px] text-[#C4C7C8] font-bold">
+                    KM/H
+                </span>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <p class="text-[16px] text-[#C4C7C8]">
+                POWERTRAIN OUTPUT
+            </p>
+
+            <div class="flex gap-[5px]">
+
+                <p class="text-[16px] text-[#FFFFFF] font-bold">
+                    1,600
+                </p>
+
+                <span class="text-[16px] text-[#C4C7C8] font-bold">
+                    BHP
+                </span>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <p class="text-[16px] text-[#C4C7C8]">
+                REGISTRY RATIO
+            </p>
+
+            <div class="flex gap-[5px]">
+
+                <p class="text-[16px] text-[#FFFFFF] font-bold">
+                    1 OF 50
+                </p>
+
+                <span class="text-[16px] text-[#C4C7C8] font-bold">
+                    ALLOCATIONS
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEATURED COLLECTION -->
+    <section class="bg-[#000000] p-[50px]">
+
+        <div class="mb-[20px] border-b border-[#303030] pb-[10px]">
+
+            <h2 class="text-[20px] text-[#FFFFFF]">
+                FEATURED COLLECTION
+            </h2>
+
+            <p class="text-[40px] font-semibold text-[#FFFFFF]">
+                Exceptional Cars. Exceptional Standards.
+            </p>
+
+            <p class="text-[20px] text-[#C4C7C8]">
+                Every chassis is certified through historical validation, structural telemetry, and dyno-verified factory tolerances.
+            </p>
+
+        </div>
+
+        <div class="flex justify-between gap-[14px]">
+
+            <!-- CARD 1 -->
+            <div class="bg-[#1A1C1C] rounded-[6px] w-[350px] h-[500px] overflow-hidden">
+
+                <div class="relative aspect-[16/9] overflow-hidden">
+
+                    <img src="https://image.bnews.vn/MediaUpload/Org/2024/10/18/new-ferrari-supercar-media-4-ca71d57b-7aaf-4345-b3df-f478dacf7375-20241018170725.jpg"
+                        alt="Apex R-Type"
+                        class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300">
+
+                    <div
+                        class="absolute top-0 left-0 bg-black/70 px-[15px] py-[8px] text-[#E2E2E2] text-[14px] font-bold">
+                        2024 ALLOCATION
+                    </div>
+
+                    <div
+                        class="absolute top-[8px] right-[8px] w-[35px] h-[35px] rounded-full bg-black/70 flex justify-center items-center text-white text-[20px]">
+                        ♡
+                    </div>
+
+                </div>
+
+                <div class="p-[20px]">
+
+                    <p class="text-[16px] text-[#C8C6C5] font-bold mb-[8px]">
+                        APEX
+                    </p>
+
+                    <h3 class="text-[24px] font-normal text-[#E2E2E2]">
+                        Apex R-Type
+                    </h3>
+
+                    <p class="text-[17px] text-[#C8C6C5] mt-[5px]">
+                        Twin-Turbo V8 • 650 HP • 0-60 in 2.9s
+                    </p>
+
+                    <div
+                        class="bg-[#202126] rounded-[6px] mt-[10px] px-[10px] py-[8px] flex justify-around items-center">
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                MILEAGE
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                1,250 MI
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                0-100
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                2.9 S
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                POWER
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                650 HP
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-end mt-[15px]">
+
+                        <div>
+
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                PRICE
+                            </p>
+
+                            <p class="text-[20px] text-[#E2E2E2] font-bold">
+                                $185,000
+                            </p>
+
+                        </div>
+
+                        <!-- ĐÃ SỬA -->
+                        <a href="RacingPorche.html"
+                            class="bg-[#3A3B3E] text-[#E2E2E2] text-[15px] uppercase px-[20px] py-[10px] rounded-[6px] hover:bg-[#4A4B4E] transition">
+                            VIEW VEHICLE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="bg-[#1A1C1C] rounded-[6px] w-[350px] h-[500px] overflow-hidden">
+
+                <div class="relative aspect-[16/9] overflow-hidden">
+
+                    <img src="https://t.ctcdn.com.br/OValzfyg9axWguDgX6a8ZM0ruik=/1200x675/smart/i890519.jpeg"
+                        alt="Apex E-Class"
+                        class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300">
+
+                    <div
+                        class="absolute top-0 left-0 bg-black/70 px-[15px] py-[8px] text-[#E2E2E2] text-[14px] font-bold">
+                        2024 ALLOCATION
+                    </div>
+
+                    <div
+                        class="absolute top-[8px] right-[8px] w-[35px] h-[35px] rounded-full bg-black/70 flex justify-center items-center text-white text-[20px]">
+                        ♡
+                    </div>
+
+                </div>
+
+                <div class="p-[20px]">
+
+                    <p class="text-[16px] text-[#C8C6C5] font-bold mb-[8px]">
+                        APEX
+                    </p>
+
+                    <h3 class="text-[24px] font-normal text-[#E2E2E2]">
+                        Apex E-Class
+                    </h3>
+
+                    <p class="text-[17px] text-[#C8C6C5] mt-[5px]">
+                        Dual Motor AWD • 500mi Range
+                    </p>
+
+                    <div
+                        class="bg-[#202126] rounded-[6px] mt-[10px] px-[10px] py-[8px] flex justify-around items-center">
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                MILEAGE
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                850 MI
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                0-100
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                3.1 S
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                POWER
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                500 HP
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-end mt-[15px]">
+
+                        <div>
+
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                PRICE
+                            </p>
+
+                            <p class="text-[20px] text-[#E2E2E2] font-bold">
+                                $120,000
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                            class="bg-[#3A3B3E] text-[#E2E2E2] text-[15px] uppercase px-[20px] py-[10px] rounded-[6px] hover:bg-[#4A4B4E] transition">
+                            VIEW VEHICLE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="bg-[#1A1C1C] rounded-[6px] w-[350px] h-[500px] overflow-hidden">
+
+                <div class="relative aspect-[16/9] overflow-hidden">
+
+                    <img src="https://cdn-media.sforum.vn/storage/app/media/ctv_seo4/Van%20Pham/7/hinh-nen-sieu-xe-44.jpg"
+                        alt="Apex GT"
+                        class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300">
+
+                    <div
+                        class="absolute top-0 left-0 bg-black/70 px-[15px] py-[8px] text-[#E2E2E2] text-[14px] font-bold">
+                        2024 ALLOCATION
+                    </div>
+
+                    <div
+                        class="absolute top-[8px] right-[8px] w-[35px] h-[35px] rounded-full bg-black/70 flex justify-center items-center text-white text-[20px]">
+                        ♡
+                    </div>
+
+                </div>
+
+                <div class="p-[20px]">
+
+                    <p class="text-[16px] text-[#C8C6C5] font-bold mb-[8px]">
+                        APEX
+                    </p>
+
+                    <h3 class="text-[24px] font-normal text-[#E2E2E2]">
+                        Apex GT
+                    </h3>
+
+                    <p class="text-[17px] text-[#C8C6C5] mt-[5px]">
+                        V12 Naturally Aspirated • 720 HP
+                    </p>
+
+                    <div
+                        class="bg-[#202126] rounded-[6px] mt-[10px] px-[10px] py-[8px] flex justify-around items-center">
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                MILEAGE
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                620 MI
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                0-100
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                3.2 S
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                POWER
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                720 HP
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-end mt-[15px]">
+
+                        <div>
+
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                PRICE
+                            </p>
+
+                            <p class="text-[20px] text-[#E2E2E2] font-bold">
+                                $210,000
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                            class="bg-[#3A3B3E] text-[#E2E2E2] text-[15px] uppercase px-[20px] py-[10px] rounded-[6px] hover:bg-[#4A4B4E] transition">
+                            VIEW VEHICLE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+            <div class="bg-[#1A1C1C] rounded-[6px] w-[350px] h-[500px] overflow-hidden">
+
+                <div class="relative aspect-[16/9] overflow-hidden">
+
+                    <img src="https://cms-i.autodaily.vn/du-lieu/2019/09/11/2020-ferrari-812-gts-3.jpg"
+                        alt="Bespoke Interiors"
+                        class="w-full h-full object-cover cursor-pointer hover:scale-110 transition duration-300">
+
+                    <div
+                        class="absolute top-0 left-0 bg-black/70 px-[15px] py-[8px] text-[#E2E2E2] text-[14px] font-bold">
+                        2024 ALLOCATION
+                    </div>
+
+                    <div
+                        class="absolute top-[8px] right-[8px] w-[35px] h-[35px] rounded-full bg-black/70 flex justify-center items-center text-white text-[20px]">
+                        ♡
+                    </div>
+
+                </div>
+
+                <div class="p-[20px]">
+
+                    <p class="text-[16px] text-[#C8C6C5] font-bold mb-[8px]">
+                        APEX
+                    </p>
+
+                    <h3 class="text-[24px] font-normal text-[#E2E2E2]">
+                        Bespoke Interiors
+                    </h3>
+
+                    <p class="text-[17px] text-[#C8C6C5] mt-[5px]">
+                        Crafted to your exact specifications.
+                    </p>
+
+                    <div
+                        class="bg-[#202126] rounded-[6px] mt-[10px] px-[10px] py-[8px] flex justify-around items-center">
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                MILEAGE
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                300 MI
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                0-100
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                2.8 S
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                POWER
+                            </p>
+
+                            <p class="text-[18px] text-[#E2E2E2] font-bold">
+                                800 HP
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-end mt-[15px]">
+
+                        <div>
+
+                            <p class="text-[14px] text-[#C8C6C5]">
+                                PRICE
+                            </p>
+
+                            <p class="text-[20px] text-[#E2E2E2] font-bold">
+                                $250,000
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                            class="bg-[#3A3B3E] text-[#E2E2E2] text-[15px] uppercase px-[20px] py-[10px] rounded-[6px] hover:bg-[#4A4B4E] transition">
+                            VIEW VEHICLE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCIERGE -->
+    <section class="bg-[#181A1B] px-[18px] py-[30px] border-t border-[#252729]">
+
+        <p class="text-[20px] tracking-[1px] text-[#C8C6C5] uppercase">
+            AUTOHUNT PRIVATE CONCIERGE
+        </p>
+
+        <h2 class="text-[40px] text-[#F1F1F1] font-normal mt-[5px]">
+            Institutional Acquisition Standards
+        </h2>
+
+        <p class="text-[12px] text-[#A9A9A9] max-w-[600px] leading-[18px]">
+            We eliminate risk from high-consequence collector car transactions through
+            autonomous verification, secured vaults, and private air transit logistics.
+        </p>
+
+        <div class="flex justify-between gap-[12px] mt-[28px]">
+
+            <!-- CARD 1 -->
+            <div class="bg-[#1D1F20] rounded-[7px] w-[32%] p-[18px]">
+
+                <div
+                    class="w-[35px] h-[35px] rounded-[5px] bg-[#3A3C3E] flex justify-center items-center text-[#E2E2E2] text-[18px]">
+                    ▣
+                </div>
+
+                <h3 class="text-[14px] text-[#F1F1F1] mt-[12px]">
+                    280-Point Telemetry Inspection
+                </h3>
+
+                <p class="text-[12px] text-[#B8B8B8] leading-[18px] mt-[4px]">
+                    Laser chassis alignment scanning, ECU flash audit, dynamometer output validation,
+                    and forensic microscopic paint-meter verification conducted by master marque technicians.
+                </p>
+
+                <p class="text-[11px] text-[#C8C6C5] font-bold tracking-[1px] mt-[18px]">
+                    CERTIFICATION / ISO-PAS 28000
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="bg-[#1D1F20] rounded-[7px] w-[32%] p-[18px]">
+
+                <div
+                    class="w-[35px] h-[35px] rounded-[5px] bg-[#3A3C3E] flex justify-center items-center text-[#E2E2E2] text-[18px]">
+                    ♙
+                </div>
+
+                <h3 class="text-[14px] text-[#F1F1F1] mt-[12px]">
+                    Tier-One Escrow Settlement
+                </h3>
+
+                <p class="text-[12px] text-[#B8B8B8] leading-[18px] mt-[4px]">
+                    Funds are secured through institutional custodian vaults in Zurich and New York.
+                    Assets release strictly upon dual-custody verification of title sovereignty and clear lien release.
+                </p>
+
+                <p class="text-[11px] text-[#C8C6C5] font-bold tracking-[1px] mt-[18px]">
+                    VAULTED ESCROW PROTOCOL
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="bg-[#1D1F20] rounded-[7px] w-[32%] p-[18px]">
+
+                <div
+                    class="w-[35px] h-[35px] rounded-[5px] bg-[#3A3C3E] flex justify-center items-center text-[#E2E2E2] text-[18px]">
+                    ➤
+                </div>
+
+                <h3 class="text-[14px] text-[#F1F1F1] mt-[12px]">
+                    Climate Enclosed Transport
+                </h3>
+
+                <p class="text-[12px] text-[#B8B8B8] leading-[18px] mt-[4px]">
+                    Dedicated air freight cargo charter and climate-controlled hydraulic transport
+                    with real-time GPS telemetry, vibration monitoring, and comprehensive gate-to-gate transit insurance.
+                </p>
+
+                <p class="text-[11px] text-[#C8C6C5] font-bold tracking-[1px] mt-[18px]">
+                    GLOBAL ARMORED DISPATCH
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRANSACTIONS -->
+    <section class="bg-[#0B0D0E] p-[50px]">
+
+        <div class="flex justify-between items-end mb-[25px]">
+
+            <div>
+
+                <p class="text-[20px] tracking-[1px] text-[#C4C7C8]">
+                    PROVENANCE & TRANSFERS
+                </p>
+
+                <h2 class="text-[40px] font-semibold text-[#FFFFFF] mt-[5px]">
+                    Recent Transactions & Client Testimonials
+                </h2>
+
+            </div>
+
+            <p class="text-[11px] font-bold tracking-[1px] text-[#E2E2E2]">
+                $184M+ VOLUME YTD
+            </p>
+
+        </div>
+
+
+        <div class="flex justify-between gap-[14px]">
+
+            <!-- CARD 1 -->
+            <div class="bg-[#1A1C1C] rounded-[7px] w-[32%] p-[18px]">
+
+                <div class="flex justify-between items-center">
+
+                    <p class="text-[12px] text-[#E2E2E2] font-bold">
+                        TX-89211&nbsp; // &nbsp;CLOSED
+                    </p>
+
+                    <p class="text-[11px] text-[#C4C7C8] font-bold">
+                        ZURICH VAULT
+                    </p>
+
+                </div>
+
+                <p class="text-[13px] text-[#BFC1C2] italic leading-[20px] mt-[12px]">
+                    "AUTOHUNT procured a hypercar allocation that three major European houses deemed impossible.
+                    The escrow process was executed flawlessly within 48 hours without public fanfare."
+                </p>
+
+                <div class="flex items-center gap-[10px] mt-[10px]">
+
+                    <div class="w-[30px] h-[30px] rounded-full bg-[#3A3B3E] flex justify-center items-center">
+                        <span class="text-[12px] text-[#E2E2E2]">
+                            M
+                        </span>
+                    </div>
+
+                    <div>
+
+                        <p class="text-[11px] text-[#E2E2E2]">
+                            Markus von Berg
+                        </p>
+
+                        <p class="text-[11px] text-[#A9ABAC]">
+                            PRIVATE FAMILY OFFICE, GENEVA
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="bg-[#1A1C1C] rounded-[7px] w-[32%] p-[18px]">
+
+                <div class="flex justify-between items-center">
+
+                    <p class="text-[12px] text-[#E2E2E2] font-bold">
+                        TX-90432&nbsp; // &nbsp;CLOSED
+                    </p>
+
+                    <p class="text-[11px] text-[#C4C7C8] font-bold">
+                        DUBAI AIR WING
+                    </p>
+
+                </div>
+
+                <p class="text-[13px] text-[#BFC1C2] italic leading-[20px] mt-[12px]">
+                    "The forensic physical telemetry scan identified a repainted front splitter on what was advertised
+                    as a zero-flaw factory chassis elsewhere. Their honesty saved our collection millions."
+                </p>
+
+                <div class="flex items-center gap-[10px] mt-[10px]">
+
+                    <div class="w-[30px] h-[30px] rounded-full bg-[#3A3B3E] flex justify-center items-center">
+                        <span class="text-[12px] text-[#E2E2E2]">
+                            H
+                        </span>
+                    </div>
+
+                    <div>
+
+                        <p class="text-[11px] text-[#E2E2E2]">
+                            Hassan Al-Maktoum
+                        </p>
+
+                        <p class="text-[11px] text-[#A9ABAC]">
+                            APEX MOTORSPORT CAPITAL
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="bg-[#1A1C1C] rounded-[7px] w-[32%] p-[18px]">
+
+                <div class="flex justify-between items-center">
+
+                    <p class="text-[12px] text-[#E2E2E2] font-bold">
+                        TX-91084&nbsp; // &nbsp;CLOSED
+                    </p>
+
+                    <p class="text-[11px] text-[#C4C7C8] font-bold">
+                        MIAMI CONSIGN
+                    </p>
+
+                </div>
+
+                <p class="text-[13px] text-[#BFC1C2] italic leading-[20px] mt-[12px]">
+                    "Consigned my SP3 anonymously through AUTOHUNT. Matched with an institutional buyer in 72 hours
+                    at my reserve price. Zero tire-kickers, total privacy from end to end."
+                </p>
+
+                <div class="flex items-center gap-[10px] mt-[10px]">
+
+                    <div class="w-[30px] h-[30px] rounded-full bg-[#3A3B3E] flex justify-center items-center">
+                        <span class="text-[12px] text-[#E2E2E2]">
+                            D
+                        </span>
+                    </div>
+
+                    <div>
+
+                        <p class="text-[11px] text-[#E2E2E2]">
+                            David Sterling
+                        </p>
+
+                        <p class="text-[11px] text-[#A9ABAC]">
+                            AUTOMOTIVE CURATOR, PALM BEACH
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#000000] px-[50px] py-[110px]">
+
+        <div class="border-b border-[#333333] pb-[20px]">
+
+            <h2 class="font-bold text-[40px] text-[#E2E2E2]">
+                PERFORMANCE METRICS
+            </h2>
+
+            <p class="text-[15px] text-[#C8C6C5] mt-[10px]">
+                Compare our flagship models across key performance indicators.
+            </p>
+
+            <p class="text-[15px] text-[#C8C6C5]">
+                Engineered for supremacy.
+            </p>
+
+        </div>
+
+        <div class="w-full mt-[50px]">
+
+            <table class="w-full border-collapse">
+
+                <thead>
+
+                    <tr class="border-b border-[#2A2E30]">
+
+                        <th class="text-left text-[15px] tracking-[2px] font-bold text-[#8C8C8C] pb-[15px]">
+                            MODEL
+                        </th>
+
+                        <th class="text-left text-[15px] tracking-[2px] font-bold text-[#8C8C8C] pb-[15px]">
+                            0-60 MPH
+                        </th>
+
+                        <th class="text-left text-[15px] tracking-[2px] font-bold text-[#8C8C8C] pb-[15px]">
+                            TOP SPEED
+                        </th>
+
+                        <th class="text-left text-[15px] tracking-[2px] font-bold text-[#8C8C8C] pb-[15px]">
+                            POWER
+                        </th>
+
+                        <th class="text-right text-[15px] tracking-[2px] font-bold text-[#8C8C8C] pb-[15px]">
+                            PRICE
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr class="border-b border-[#2A2E30]">
+
+                        <td class="py-[18px] text-[20px] font-medium text-[#C8C6C5]">
+                            Apex R-Type
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            2.9s
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            211 mph
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            650 HP
+                        </td>
+
+                        <td class="py-[18px] text-right text-[15px] font-bold text-[#C8C6C5]">
+                            $185k
+                        </td>
+
+                    </tr>
+
+                    <tr class="border-b border-[#2A2E30]">
+
+                        <td class="py-[18px] text-[20px] font-medium text-[#C8C6C5]">
+                            Apex GT
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            3.2s
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            218 mph
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            720 HP
+                        </td>
+
+                        <td class="py-[18px] text-right text-[15px] font-bold text-[#C8C6C5]">
+                            $210k
+                        </td>
+
+                    </tr>
+
+                    <tr class="border-b border-[#2A2E30]">
+
+                        <td class="py-[18px] text-[20px] font-medium text-[#C8C6C5]">
+                            Apex E-Class
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            2.4s
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            180 mph
+                        </td>
+
+                        <td class="py-[18px] text-[15px] font-bold text-[#C8C6C5]">
+                            800 HP
+                        </td>
+
+                        <td class="py-[18px] text-right text-[15px] font-bold text-[#C8C6C5]">
+                            $120k
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="flex justify-between items-center mt-[50px]">
+
+            <div>
+
+                <h2 class="text-[20px] text-[#E2E2E2] font-bold">
+                    APEX AUTOMOTIVE
+                </h2>
+
+                <p class="text-[#C8C6C5] text-[10px]">
+                    Precision engineering for those who demand the absolute best in automotive performance and luxury.
+                </p>
+
+            </div>
+
+            <div class="flex flex-col gap-[20px]">
+
+                <h3 class="text-[10px] text-[#C8C6C5] font-bold">
+                    INFORMATION
+                </h3>
+
+                <p class="text-[#E2E2E2] text-[15px]">
+                    Showroom Location
+                </p>
+
+                <p class="text-[#E2E2E2] text-[15px]">
+                    Contact Details
+                </p>
+
+                <p class="text-[#E2E2E2] text-[15px]">
+                    Opening Hours
+                </p>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+            <div class="bg-[#000000] px-[47px] py-[30px]">
+
+                <div>
+
+                    <h3 class="text-[10px] font-bold tracking-[2px] text-[#AAB4C3] mb-[30px]">
+                        NEWSLETTER
+                    </h3>
+
+                    <div class="flex gap-[12px]">
+
+                        <input id="emailInput" type="email"
+                            placeholder="Enter your email"
+                            class="w-[200px] h-[40px] bg-[#202126] border border-[#30323A] rounded-[5px] px-[20px] text-[22px] text-[#AAB4C3] outline-none">
+
+                        <button onclick="openNewsletter()"
+                            class="w-[100px] h-[40px] bg-[#F1F1F1] text-[#1A1A1A] text-[15px] font-normal rounded-[5px] hover:bg-[#DCDCDC] transition">
+
+                            SUBSCRIBE
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="mt-[65px]">
+
+                    <p class="text-[15px] tracking-[1px] text-[#AAB4C3]">
+                        © 2024 APEX AUTOMOTIVE GROUP.
+                    </p>
+
+                    <p class="text-[15px] tracking-[1px] text-[#AAB4C3] mt-[8px]">
+                        PRECISION ENGINEERING.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEWSLETTER MODAL -->
+        <div id="newsletterModal"
+            class="hidden fixed inset-0 z-[999] bg-black/70 flex justify-end">
+
+            <div
+                class="relative bg-white w-[60%] h-full overflow-y-auto px-[50px] py-[45px] text-black">
+
+                <button onclick="closeNewsletter()"
+                    class="absolute top-[20px] right-[20px] w-[50px] h-[50px] rounded-full border border-[#999] text-[28px] hover:bg-[#EEEEEE]">
+
+                    ×
+
+                </button>
+
+                <h2 class="text-[36px] font-semibold mb-[25px]">
+                    Subscribe to all APEX AUTOMOTIVE newsletters
+                </h2>
+
+                <h3 class="text-[24px] font-semibold mb-[15px]">
+                    Your data
+                </h3>
+
+                <p class="text-[16px] mb-[25px]">
+                    * Mandatory Fields
+                </p>
+
+                <label class="text-[16px] text-[#777777]">
+                    Email *
+                </label>
+
+                <input id="modalEmail" type="email"
+                    placeholder="Insert your email"
+                    class="w-full border-b border-[#999999] py-[10px] text-[18px] outline-none mb-[60px]">
+
+                <h3 class="text-[22px] font-semibold mb-[20px]">
+                    Choose the newsletters you want to receive*
+                </h3>
+
+                <div class="grid grid-cols-2 gap-[20px] mb-[60px]">
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        AUTOMOTIVE NEWS
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        NEW MODELS
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        EVENTS
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        RACING
+                    </label>
+
+                </div>
+
+                <h3 class="text-[22px] font-semibold mb-[20px]">
+                    Privacy and Marketing Consent*
+                </h3>
+
+                <p class="text-[16px] leading-[1.4] mb-[25px]">
+                    I have read the Privacy Policy and confirm I want to receive marketing
+                    communications from APEX AUTOMOTIVE regarding the world of automotive
+                    performance and luxury.
+                </p>
+
+                <div class="flex gap-[150px] mb-[20px]">
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+
+                        <input type="radio" name="consent"
+                            class="w-[20px] h-[20px]">
+
+                        I AGREE
+
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+
+                        <input type="radio" name="consent"
+                            class="w-[20px] h-[20px]">
+
+                        I DISAGREE
+
+                    </label>
+
+                </div>
+
+                <a href="#" class="text-[16px] underline">
+                    To the marketing activities of APEX AUTOMOTIVE
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- NEWSLETTER SCRIPT -->
+    <script>
+
+        function openNewsletter() {
+
+            let email =
+                document.getElementById("emailInput").value;
+
+            document.getElementById("modalEmail").value =
+                email;
+
+            document.getElementById("newsletterModal")
+                .classList.remove("hidden");
+
+        }
+
+        function closeNewsletter() {
+
+            document.getElementById("newsletterModal")
+                .classList.add("hidden");
+
+        }
+
+    </script>
+
+
+    <!-- HERO SLIDER -->
+    <script>
+
+        (function () {
+
+            var heroImgs =
+                document.querySelectorAll(".hero-bg-img");
+
+            var heroDots =
+                document.querySelectorAll(".hero-dot");
+
+            var current = 0;
+
+            var INTERVAL_MS = 3000;
+
+            var timer = null;
+
+
+            function goToSlide(index) {
+
+                if (index === current) return;
+
+                heroImgs[current].classList.remove("opacity-100");
+                heroImgs[current].classList.add("opacity-0");
+
+                heroDots[current].classList.remove("bg-white");
+                heroDots[current].classList.add("bg-white/40");
+
+                current = index;
+
+                heroImgs[current].classList.remove("opacity-0");
+                heroImgs[current].classList.add("opacity-100");
+
+                heroDots[current].classList.remove("bg-white/40");
+                heroDots[current].classList.add("bg-white");
+
+            }
+
+
+            function startAutoplay() {
+
+                if (timer) {
+                    clearInterval(timer);
+                }
+
+                timer = setInterval(function () {
+
+                    goToSlide(
+                        (current + 1) % heroImgs.length
+                    );
+
+                }, INTERVAL_MS);
+
+            }
+
+
+            if (heroImgs.length > 1) {
+
+                heroDots.forEach(function (dot, i) {
+
+                    dot.addEventListener("click", function () {
+
+                        goToSlide(i);
+
+                        startAutoplay();
+
+                    });
+
+                });
+
+                startAutoplay();
+
+            }
+
+        })();
+
+    </script>
+
+
+    <!-- USER / LOGIN SCRIPT -->
+    <script>
+
+        const username =
+            localStorage.getItem("username") || "User";
+
+        const userEmail =
+            localStorage.getItem("userEmail") || "";
+
+        const userNameElement =
+            document.getElementById("userName");
+
+        const userEmailElement =
+            document.getElementById("userEmail");
+
+        const menuUserNameElement =
+            document.getElementById("menuUserName");
+
+        const userAvatarElement =
+            document.getElementById("userAvatar");
+
+
+        // HIỆN TÊN
+        if (userNameElement) {
+
+            userNameElement.textContent =
+                username;
+
+        }
+
+
+        // HIỆN EMAIL
+        if (userEmailElement) {
+
+            userEmailElement.textContent =
+                userEmail;
+
+        }
+
+
+        // HIỆN TÊN TRONG DROPDOWN
+        if (menuUserNameElement) {
+
+            menuUserNameElement.textContent =
+                username;
+
+        }
+
+
+        // AVATAR LẤY CHỮ CÁI ĐẦU
+        if (userAvatarElement) {
+
+            userAvatarElement.textContent =
+                username.charAt(0).toUpperCase();
+
+        }
+
+
+        // MỞ / ĐÓNG USER MENU
+        function toggleUserMenu() {
+
+            const menu =
+                document.getElementById("userMenu");
+
+            if (menu) {
+
+                menu.classList.toggle("hidden");
+
+            }
+
+        }
+
+
+        // CLICK RA NGOÀI THÌ ĐÓNG MENU
+        document.addEventListener("click", function (event) {
+
+            const userArea =
+                document.getElementById("userArea");
+
+            const menu =
+                document.getElementById("userMenu");
+
+            if (
+                userArea &&
+                menu &&
+                !userArea.contains(event.target)
+            ) {
+
+                menu.classList.add("hidden");
+
+            }
+
+        });
+
+
+        // ĐĂNG XUẤT
+        function logout() {
+
+            localStorage.removeItem("loginStatus");
+            localStorage.removeItem("userRole");
+            localStorage.removeItem("username");
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("rememberLogin");
+
+            alert("Đăng xuất thành công!");
+
+            window.location.href = "login.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

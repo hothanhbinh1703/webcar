@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porche</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        porsche: ['Archivo', '"Arial Black"', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Font rộng giống menu trong ảnh mẫu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,13 +43,44 @@
         </div>
     </header>
 
-<video src="../IMG/Porche.mp4" controls autoplay loop muted class="w-full aspect-video object-cover"></video>
-    <div class="relative w-full h-full">
+    <!-- ===== SIDE NAV: tự sinh từ các phần tử có data-nav ===== -->
+    <nav id="sideNav" aria-label="Điều hướng các phần" data-open="false" data-hidden="true" class="group/nav fixed left-0.5 sm:left-4 top-1/2 -translate-y-1/2 z-20 pt-[18px] pr-[26px] pb-[58px] pl-[14px]
+               text-white font-porsche [font-stretch:125%] pointer-events-none
+               transition-[opacity,visibility] duration-300 motion-reduce:transition-none
+               data-[open=true]:pointer-events-auto
+               data-[hidden=true]:opacity-0 data-[hidden=true]:invisible">
+
+        <!-- nền đen, chỉ hiện khi menu mở -->
+        <div class="absolute inset-0 rounded-md bg-black/90 backdrop-blur-sm opacity-0 pointer-events-none
+                    transition-opacity duration-300 motion-reduce:transition-none
+                    group-data-[open=true]/nav:opacity-100"></div>
+
+        <ul id="navList" class="relative m-0 p-0 list-none"></ul>
+
+        <!-- mũi tên đóng menu -->
+        <button id="navToggle" type="button" aria-label="Đóng menu" aria-expanded="false" tabindex="-1" class="absolute left-[14px] bottom-4 w-6 h-6 grid place-items-center text-white cursor-pointer
+                   opacity-0 pointer-events-none outline-none
+                   transition duration-300 motion-reduce:transition-none hover:-translate-y-0.5
+                   focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:rounded-full
+                   group-data-[open=true]/nav:opacity-100 group-data-[open=true]/nav:pointer-events-auto">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="4 16 12 7 20 16" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Video mở đầu: KHÔNG thuộc chấm nào (không có data-nav) -->
+    <video id="hero" src="../IMG/Porche.mp4" controls autoplay loop muted
+        class="w-full aspect-video object-cover"></video>
+
+    <!-- Chấm POWERTRAIN = clip video + khối thông số (2 phần tử dùng chung data-nav="Powertrain") -->
+    <div id="clip" data-nav="Powertrain" class="scroll-mt-20 relative w-full h-full">
         <video id="clipVideo" src="../IMG/snaptik.vn_7522891065066753282.mp4" controls
             class=" h-[1000px] w-full aspect-video object-cover hidden" onended="backToThumbnail()"></video>
 
-        <div id="thumbnailWrap" class="bg-[#000000] relative w-full h-full">
-            <img src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1153_a5_rgb.jpg"
+        <div id="thumbnailWrap" class="bg-[#000000] relative w-full h-full ">
+            <img src="https://i.pinimg.com/1200x/55/c2/11/55c2111fa90c97f09cadd757be62f476.jpg"
                 class="w-full h-full object-cover opacity-50" />
 
             <button onclick="playClip()"
@@ -42,6 +89,194 @@
             </button>
         </div>
     </div>
+
+    <div id="technical" data-nav="Powertrain"
+        class="scroll-mt-20 bg-[#0D0C0C] h-[500px] flex justify-around items-center">
+
+        <div>
+            <h1 class="font-bold text-[30px] text-[#C4C7C8]">CO2 Emission:</h1>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Low: 382 g/km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Mid: 227 g/km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">High: 193 g/km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Extra high: 194 g/km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Combined: 227 g/km</p>
+        </div>
+
+        <div>
+            <h1 class="font-bold text-[30px] text-[#C4C7C8]">Fuel consumption:</h1>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Low: 16.9 l/100km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Mid: 10.0 l/100km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">High: 8.5 l/100km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Extra High: 8.6 l/100km</p>
+            <p class="font-bold text-[15px] text-[#FFFFFF]">Combined: 10.0 l/100km</p>
+        </div>
+
+        <div class="w-[400px] gap-[10px]">
+            <p class=" text-[15px] leading-[1.6] text-[#FFFFFF] mb-[10px]">
+                The values of fuel consumption and CO2 emissions shown were determined according to the European
+                Regulation (EC) 715/2007 in the version applicable at the time of type approval. The fuel consumption
+                and CO2 emission figures refer to the WLTP cycle.
+            </p>
+            <button
+                class="w-[120px] h-[40px] border border-white text-[15px] text-[#FFFFFF] rounded-[3px] hover:bg-white hover:text-black transition">
+                READ MORE </button>
+        </div>
+
+    </div>
+
+    <!-- Chấm DESIGN = ảnh 1 + ảnh 2 | Chấm INTERIOR = ảnh 3 + ảnh 4 -->
+    <img id="photo-1" data-nav="Design" class="scroll-mt-20 block w-full"
+        src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1156_a5_rgb.jpg" />
+    <img id="photo-2" data-nav="Design" class="scroll-mt-20 block w-full"
+        src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1157_a5_rgb.jpg" />
+    <img id="photo-3" data-nav="Interior" class="scroll-mt-20 block w-full"
+        src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1158_a5_rgb.jpg" />
+    <img id="photo-4" data-nav="Interior" class="scroll-mt-20 block w-full"
+        src="https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1159_a5_rgb.jpg" />
+
+    <footer class="bg-[#000000] px-[50px] py-[110px]">
+        <div class="flex justify-between items-center mt-[50px]">
+
+            <div>
+                <h2 class="text-[20px] text-[#E2E2E2] font-bold">APEX AUTOMOTIVE</h2>
+                <p class="text-[#C8C6C5] text-[10px]">Precision engineering for those who demand the absolute best in
+                    automotive performance and luxury.</p>
+            </div>
+
+            <div class="flex flex-col gap-[20px]">
+                <h3 class="text-[10px] text-[#C8C6C5] font-bold">INFORMATION</h3>
+                <p class="text-[#E2E2E2] text-[15px]">Showroom Location</p>
+                <p class="text-[#E2E2E2] text-[15px]">Contact Details</p>
+                <p class="text-[#E2E2E2] text-[15px]">Opening Hours</p>
+            </div>
+
+            <div class="bg-[#000000] px-[47px] py-[30px]">
+                <div>
+                    <h3 class="text-[10px] font-bold tracking-[2px] text-[#AAB4C3] mb-[30px]">NEWSLETTER</h3>
+
+                    <div class="flex gap-[12px]">
+                        <input id="emailInput" type="email" placeholder="Enter your email"
+                            class="w-[200px] h-[40px] bg-[#202126] border border-[#30323A] rounded-[5px] px-[20px] text-[22px] text-[#AAB4C3] outline-none">
+
+                        <button onclick="openNewsletter()"
+                            class="w-[100px] h-[40px] bg-[#F1F1F1] text-[#1A1A1A] text-[15px] font-normal rounded-[5px] hover:bg-[#DCDCDC] transition">
+                            SUBSCRIBE
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-[65px]">
+                    <p class="text-[15px] tracking-[1px] text-[#AAB4C3]">© 2024 APEX AUTOMOTIVE GROUP.</p>
+                    <p class="text-[15px] tracking-[1px] text-[#AAB4C3] mt-[8px]">PRECISION ENGINEERING.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="newsletterModal" class="hidden fixed inset-0 z-[999] bg-black/70 flex justify-end">
+
+            <div class="relative bg-white w-[60%] h-full overflow-y-auto px-[50px] py-[45px] text-black">
+
+                <button onclick="closeNewsletter()"
+                    class="absolute top-[20px] right-[20px] w-[50px] h-[50px] rounded-full border border-[#999] text-[28px] hover:bg-[#EEEEEE]">
+                    ×
+                </button>
+
+                <h2 class="text-[36px] font-semibold mb-[25px]">
+                    Subscribe to all APEX AUTOMOTIVE newsletters
+                </h2>
+
+                <h3 class="text-[24px] font-semibold mb-[15px]">
+                    Your data
+                </h3>
+
+                <p class="text-[16px] mb-[25px]">
+                    * Mandatory Fields
+                </p>
+
+                <label class="text-[16px] text-[#777777]">
+                    Email *
+                </label>
+
+                <input id="modalEmail" type="email" placeholder="Insert your email"
+                    class="w-full border-b border-[#999999] py-[10px] text-[18px] outline-none mb-[60px]">
+
+                <h3 class="text-[22px] font-semibold mb-[20px]">
+                    Choose the newsletters you want to receive*
+                </h3>
+
+                <div class="grid grid-cols-2 gap-[20px] mb-[60px]">
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        AUTOMOTIVE NEWS
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        NEW MODELS
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        EVENTS
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="checkbox" class="w-[20px] h-[20px]">
+                        RACING
+                    </label>
+
+                </div>
+
+                <h3 class="text-[22px] font-semibold mb-[20px]">
+                    Privacy and Marketing Consent*
+                </h3>
+
+                <p class="text-[16px] leading-[1.4] mb-[25px]">
+                    I have read the Privacy Policy and confirm I want to receive marketing
+                    communications from APEX AUTOMOTIVE regarding the world of automotive
+                    performance and luxury.
+                </p>
+
+                <div class="flex gap-[150px] mb-[20px]">
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="radio" name="consent" class="w-[20px] h-[20px]">
+                        I AGREE
+                    </label>
+
+                    <label class="flex items-center gap-[10px] text-[18px]">
+                        <input type="radio" name="consent" class="w-[20px] h-[20px]">
+                        I DISAGREE
+                    </label>
+
+                </div>
+
+                <a href="#" class="text-[16px] underline">
+                    To the marketing activities of APEX AUTOMOTIVE
+                </a>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script>
+        function openNewsletter() {
+            let email = document.getElementById("emailInput").value;
+
+            document.getElementById("modalEmail").value = email;
+
+            document.getElementById("newsletterModal").classList.remove("hidden");
+        }
+
+        function closeNewsletter() {
+            document.getElementById("newsletterModal").classList.add("hidden");
+        }
+    </script>
 
     <script>
         function playClip() {
@@ -58,6 +293,151 @@
             video.currentTime = 0;
             document.getElementById('thumbnailWrap').classList.remove('hidden');
         }
+    </script>
+
+    <!-- ================= SIDE NAV LOGIC ================= -->
+    <script>
+        (() => {
+            // Gom các phần tử có cùng data-nav thành 1 nhóm = 1 chấm (theo thứ tự xuất hiện trên trang)
+            const groups = [];
+            document.querySelectorAll('[data-nav]').forEach(el => {
+                const label = el.dataset.nav;
+                let g = groups.find(x => x.label === label);
+                if (!g) { g = { label, els: [] }; groups.push(g); }
+                g.els.push(el);
+            });
+            if (!groups.length) return;
+
+            const nav = document.getElementById('sideNav');
+            const list = document.getElementById('navList');
+            const toggle = document.getElementById('navToggle');
+
+            const R = 10;
+            const C = 2 * Math.PI * R;               // chu vi vòng tiến độ
+            const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            let current = -1;
+            let lockIdx = -1, lockUntil = 0;         // giữ mục vừa bấm trong lúc cuộn mượt
+            let ticking = false;
+
+            // Trạng thái lưu ở data-open / data-hidden / data-active, Tailwind đọc qua data-[...]: và group-data-[...]:
+            const isOpen = () => nav.dataset.open === 'true';
+            function setOpen(open) {
+                nav.dataset.open = String(open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.tabIndex = open ? 0 : -1;
+            }
+
+            const ITEM = 'group/item flex items-center gap-[14px] h-[34px] p-0 text-left cursor-pointer outline-none '
+                + 'pointer-events-none group-data-[open=true]/nav:pointer-events-auto';
+
+            const DOT_WRAP = 'relative grid place-items-center flex-none w-6 h-6 rounded-full pointer-events-auto '
+                + 'group-focus-visible/item:outline group-focus-visible/item:outline-2 '
+                + 'group-focus-visible/item:outline-offset-2 group-focus-visible/item:outline-white';
+
+            const DOT = 'block w-1 h-1 rounded-full bg-white shadow-[0_0_6px_rgba(0,0,0,.8)] '
+                + 'transition-transform duration-300 group-hover/item:scale-[1.6]';
+
+            const RING = 'absolute inset-0 w-full h-full -rotate-90 opacity-0 transition-opacity duration-300 '
+                + 'motion-reduce:transition-none group-data-[active=true]/item:opacity-100';
+
+            const LABEL = 'nav-label text-xs sm:text-[15px] font-semibold tracking-[.08em] uppercase whitespace-nowrap '
+                + 'opacity-0 -translate-x-2.5 pointer-events-none [text-shadow:0_1px_10px_rgba(0,0,0,.95)] '
+                + 'transition duration-300 motion-reduce:transition-none '
+                // menu đóng: chỉ mục đang xem hiện chữ
+                + 'group-data-[active=true]/item:opacity-100 group-data-[active=true]/item:translate-x-0 '
+                + 'group-data-[active=true]/item:pointer-events-auto '
+                // menu mở: hiện hết, lần lượt từng dòng
+                + 'group-data-[open=true]/nav:opacity-100 group-data-[open=true]/nav:translate-x-0 '
+                + 'group-data-[open=true]/nav:[text-shadow:none] group-data-[open=true]/nav:delay-[calc(var(--i)*35ms)]';
+
+            const items = groups.map((g, i) => {
+                const li = document.createElement('li');
+                li.style.setProperty('--i', i);
+                li.innerHTML = `
+                    <button type="button" data-active="false" class="${ITEM}">
+                        <span class="${DOT_WRAP}">
+                            <span class="${DOT}"></span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="${RING}">
+                                <circle cx="12" cy="12" r="${R}" class="fill-none stroke-white/30 stroke-[1.5]"/>
+                                <circle cx="12" cy="12" r="${R}" class="ring-bar fill-none stroke-white stroke-[1.5] [stroke-linecap:round]"
+                                        stroke-dasharray="${C}" stroke-dashoffset="${C}"/>
+                            </svg>
+                        </span>
+                        <span class="${LABEL}"></span>
+                    </button>`;
+                const btn = li.querySelector('button');
+                btn.querySelector('.nav-label').textContent = g.label;
+
+                btn.addEventListener('click', () => {
+                    // Menu đang đóng: bấm chấm -> mở menu
+                    if (!isOpen()) {
+                        setOpen(true);
+                        return;
+                    }
+                    // Menu đang mở: bấm mục -> cuộn tới phần tử đầu tiên của nhóm rồi đóng menu
+                    lockIdx = i;
+                    lockUntil = Date.now() + 900;
+                    g.els[0].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+                    setOpen(false);
+                    update();
+                });
+
+                list.appendChild(li);
+                return { btn, bar: li.querySelector('.ring-bar') };
+            });
+
+            toggle.addEventListener('click', () => setOpen(false));
+            document.addEventListener('click', e => { if (!nav.contains(e.target)) setOpen(false); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+            function update() {
+                ticking = false;
+                const line = innerHeight * 0.4;      // "vạch đọc" để xác định đang ở nhóm nào
+
+                // Nhóm đang xem = nhóm cuối cùng mà phần tử đầu đã chạm vạch đọc
+                let idx = -1;
+                groups.forEach((g, i) => {
+                    if (g.els[0].getBoundingClientRect().top <= line) idx = i;
+                });
+                if (Date.now() < lockUntil) idx = lockIdx;
+
+                // Chưa tới nhóm đầu tiên (đang ở video mở đầu) hoặc đã qua nhóm cuối (footer) -> ẩn menu
+                const lastEls = groups[groups.length - 1].els;
+                const lastRect = lastEls[lastEls.length - 1].getBoundingClientRect();
+                const hide = idx === -1 || lastRect.bottom < innerHeight * 0.35;
+                nav.dataset.hidden = String(hide);
+                if (hide) { setOpen(false); return; }
+
+                if (idx !== current) {
+                    items.forEach((it, i) => {
+                        it.btn.dataset.active = String(i === idx);
+                        if (i === idx) it.btn.setAttribute('aria-current', 'true');
+                        else {
+                            it.btn.removeAttribute('aria-current');
+                            it.bar.style.strokeDashoffset = C;
+                        }
+                    });
+                    current = idx;
+                }
+
+                // Vòng tròn chạy theo tiến độ cuộn qua CẢ nhóm (từ đầu phần tử đầu tới cuối phần tử cuối)
+                const els = groups[idx].els;
+                const top = els[0].getBoundingClientRect().top;
+                const bottom = els[els.length - 1].getBoundingClientRect().bottom;
+                const p = Math.min(1, Math.max(0, (line - top) / (bottom - top)));
+                items[idx].bar.style.strokeDashoffset = C * (1 - p);
+            }
+
+            function onScroll() {
+                if (!ticking) { ticking = true; requestAnimationFrame(update); }
+            }
+
+            addEventListener('scroll', onScroll, { passive: true });
+            addEventListener('resize', onScroll);
+            addEventListener('load', update);        // ảnh tải xong thì chiều cao thay đổi
+            update();
+        })();
     </script>
 </body>
 

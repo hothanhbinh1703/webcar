@@ -4,127 +4,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>Đăng nhập - APEX AUTOMOTIVE</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-[#06090D] min-h-screen flex flex-col">
 
     <div class="relative flex-1">
+
         <!-- Ảnh nền -->
         <img src="../IMG/bg.png" alt="nền" class="absolute inset-0 w-full h-full object-cover">
 
         <!-- Lớp phủ tối -->
         <div class="absolute inset-0 bg-black/60"></div>
 
+        <!-- HEADER -->
         <header class="absolute top-0 left-0 w-full z-10 p-[10px] bg-[#111314]">
+
             <div class="flex justify-around items-center">
+
+                <!-- LOGO -->
                 <a href="../index.html" title="Trang chủ"
                     class="flex justify-center items-center gap-[10px] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
-                    <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]" />
-                    <h1 class="font-bold text-[24px] text-[#E2E2E2]">APEX AUTOMOTIVE</h1>
+
+                    <img src="../IMG/logo.png" alt="LogoXe" class="w-[60px] h-[60px] rounded-[10px]">
+
+                    <h1 class="font-bold text-[24px] text-[#E2E2E2]">
+                        APEX AUTOMOTIVE
+                    </h1>
+
                 </a>
 
+                <!-- MENU -->
                 <div class="flex justify-center gap-10">
+
                     <a href="inventory.html"
-                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">Inventory</a>
-                    <a href="#"
-                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">About
-                        Us</a>
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                        Inventory
+                    </a>
+
+                    <a href="AboutUs.html"
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                        About Us
+                    </a>
+
+                    <!-- ĐĂNG NHẬP -->
                     <div
-                        class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
-                        <a href="login.html" class="font-normal text-[15px] uppercase text-[#E2E2E2] ">ĐĂNG
-                            NHẬP</a>
+                        class="w-[100px] h-[30px] border border-[#D4D4D4] flex justify-center items-center cursor-pointer rounded-[5px] hover:scale-110 transition duration-300">
+
+                        <a href="login.html" class="font-normal text-[15px] uppercase text-[#E2E2E2]">
+                            ĐĂNG NHẬP
+                        </a>
+
                     </div>
+
                     <a href="Register.html"
-                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">ĐĂNG
-                        KÝ</a>
+                        class="text-[15px] uppercase text-[#E2E2E2] cursor-pointer hover:scale-110 transition duration-300 relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                        ĐĂNG KÝ
+                    </a>
+
                 </div>
+
             </div>
+
         </header>
 
+        <!-- LOGIN -->
         <div class="relative z-[1] flex justify-center items-start pt-[140px] px-[20px] pb-[100px]">
+
             <div class="bg-[#1A1C1C] w-full max-w-[400px] p-[30px] rounded-[15px] border border-[#2A2D30]">
+
+                <!-- LOGO -->
                 <div class="flex justify-center mb-[20px]">
+
                     <img src="../IMG/logo.png" alt="Logo"
                         class="w-[60px] h-[60px] rounded-full border border-[#3A3D40]">
+
                 </div>
 
-                <h1 class="text-[28px] font-bold text-[#E2E2E2] text-center uppercase">Đăng nhập</h1>
-                <p class="text-[13px] text-[#8a8a8a] text-center mt-[8px] mb-[25px] leading-relaxed">Truy cập cổng thông
-                    tin đặc quyền dành cho chủ sở hữu & thành viên.</p>
+                <!-- TITLE -->
+                <h1 class="text-[28px] font-bold text-[#E2E2E2] text-center uppercase">
+                    Đăng nhập
+                </h1>
 
-                <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">Email hoặc tên đăng nhập</label>
+                <p class="text-[13px] text-[#8a8a8a] text-center mt-[8px] mb-[25px] leading-relaxed">
+                    Truy cập cổng thông tin đặc quyền dành cho chủ sở hữu & thành viên.
+                </p>
+
+                <!-- USERNAME -->
+                <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">
+                    Email hoặc tên đăng nhập
+                </label>
 
                 <div
                     class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px] mt-[8px] mb-[18px]">
+
                     <span class="text-[#8a8a8a]">
-                        <img src="../IMG/tk.png" class="w-[12px] h-[14px]" />
+                        <img src="../IMG/tk.png" class="w-[12px] h-[14px]">
                     </span>
-                    <input type="text" placeholder="name@example.com"
+
+                    <input id="username" type="text" placeholder="name@example.com"
                         class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+
                 </div>
 
+                <!-- PASSWORD TITLE -->
                 <div class="flex justify-between items-center">
-                    <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">Mật khẩu</label>
-                    <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">Quên mật khẩu?</a>
+
+                    <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">
+                        Mật khẩu
+                    </label>
+
+                    <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">
+                        Quên mật khẩu?
+                    </a>
+
                 </div>
 
+                <!-- PASSWORD -->
                 <div
                     class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px] mt-[8px] mb-[15px]">
+
                     <span class="text-[#8a8a8a]">
-                        <img src="../IMG/mk.png" class="w-[12px] h-[14px]" />
+                        <img src="../IMG/mk.png" class="w-[12px] h-[14px]">
                     </span>
-                    <input type="password" placeholder="••••••••••••"
+
+                    <input id="password" type="password" placeholder="••••••••••••"
                         class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
-                    <span class="text-[#8a8a8a] cursor-pointer">
-                        <img src="../IMG/eye.png" class="w-[15px] h-[12px]" />
-                    </span>
+
+                    <!-- EYE -->
+                    <button type="button" id="showPassword"
+                        class="text-[#8a8a8a] cursor-pointer hover:text-[#E2E2E2]">
+
+                        <img src="../IMG/eye.png" class="w-[15px] h-[12px]">
+
+                    </button>
+
                 </div>
 
+                <!-- REMEMBER -->
                 <div class="flex items-center gap-[8px] mb-[25px]">
-                    <input type="checkbox" class="w-[14px] h-[14px] accent-[#E2E2E2]">
-                    <label class="text-[13px] text-[#8a8a8a]">Ghi nhớ đăng nhập</label>
+
+                    <input id="remember" type="checkbox"
+                        class="w-[14px] h-[14px] accent-[#E2E2E2]">
+
+                    <label class="text-[13px] text-[#8a8a8a]">
+                        Ghi nhớ đăng nhập
+                    </label>
+
                 </div>
 
-                <button
-                    class="w-full bg-white text-black font-bold text-[15px] uppercase py-[12px] rounded-[8px] cursor-pointer hover:opacity-80 transition flex justify-center items-center gap-[8px]">Đăng
-                    nhập <span>→</span></button>
+                <!-- LOGIN BUTTON -->
+                <button id="loginBtn" type="button"
+                    class="w-full bg-white text-black font-bold text-[15px] uppercase py-[12px] rounded-[8px] cursor-pointer hover:opacity-80 transition flex justify-center items-center gap-[8px]">
+
+                    Đăng nhập
+
+                    <span>→</span>
+
+                </button>
+
+                <!-- MESSAGE -->
+                <p id="loginMessage"
+                    class="text-center text-[13px] mt-[12px] min-h-[20px]">
+                </p>
+
+                <!-- OR -->
                 <div class="flex items-center gap-[10px] my-[25px]">
+
                     <div class="flex-1 h-[1px] bg-[#2A2D30]"></div>
-                    <span class="text-[11px] uppercase text-[#8a8a8a] whitespace-nowrap">hoặc tiếp tục với</span>
+
+                    <span class="text-[11px] uppercase text-[#8a8a8a] whitespace-nowrap">
+                        hoặc tiếp tục với
+                    </span>
+
                     <div class="flex-1 h-[1px] bg-[#2A2D30]"></div>
+
                 </div>
+
+                <!-- GOOGLE / APPLE -->
                 <div class="flex gap-[10px]">
-                    <button
+
+                    <button type="button"
                         class="flex-1 flex justify-center items-center gap-[8px] border border-[#2A2D30] text-[#E2E2E2] text-[14px] py-[10px] rounded-[8px] cursor-pointer hover:bg-[#1A1C1C] transition">
+
                         <span>
-                            <img src="../IMG/g.png" class="w-[13px] h-[13px]" />
+                            <img src="../IMG/g.png" class="w-[13px] h-[13px]">
                         </span>
+
                         Google
+
                     </button>
-                    <button
+
+                    <button type="button"
                         class="flex-1 flex justify-center items-center gap-[8px] border border-[#2A2D30] text-[#E2E2E2] text-[14px] py-[10px] rounded-[8px] cursor-pointer hover:bg-[#1A1C1C] transition">
-                        <img src="../IMG/ap.png" class="w-[11px] h-[14px]" />
+
+                        <img src="../IMG/ap.png" class="w-[11px] h-[14px]">
+
                         Apple
+
                     </button>
+
                 </div>
-                <p class="text-center text-[13px] text-[#8a8a8a] mt-[25px]">Chưa có tài khoản? <a href="Register.html"
-                        class="text-[#E2E2E2] font-bold hover:underline">Đăng ký ngay</a></p>
+
+                <!-- REGISTER -->
+                <p class="text-center text-[13px] text-[#8a8a8a] mt-[25px]">
+
+                    Chưa có tài khoản?
+
+                    <a href="Register.html"
+                        class="text-[#E2E2E2] font-bold hover:underline">
+
+                        Đăng ký ngay
+
+                    </a>
+
+                </p>
+
             </div>
+
         </div>
+
     </div>
 
-    <footer class="relative z-[2] bg-[#111314] border-t border-[#2A2D30] py-[15px] px-[20px]">
-        <div class="flex justify-between items-center flex-wrap gap-[10px] ">
-            <p class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">© 2024 APEX AUTOMOTIVE. &nbsp;|&nbsp;
-                PRECISION ENGINEERING & LUXURY PERFORMANCE.</p>
+    <!-- FOOTER -->
+    <footer
+        class="relative z-[2] bg-[#111314] border-t border-[#2A2D30] py-[15px] px-[20px]">
+
+        <div class="flex justify-between items-center flex-wrap gap-[10px]">
+
+            <p
+                class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+
+                © 2024 APEX AUTOMOTIVE. &nbsp;|&nbsp;
+                PRECISION ENGINEERING & LUXURY PERFORMANCE.
+
+            </p>
+
             <div class="flex gap-[25px]">
-                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">Chính sách bảo mật</a>
-                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">Điều khoản dịch vụ</a>
-                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">Liên hệ hỗ trợ</a>
+
+                <a href="#"
+                    class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                    Chính sách bảo mật
+                </a>
+
+                <a href="#"
+                    class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                    Điều khoản dịch vụ
+                </a>
+
+                <a href="#"
+                    class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition relative after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[1px] after:bg-[#E2E2E2] after:transition-all after:duration-500 hover:after:w-full">
+                    Liên hệ hỗ trợ
+                </a>
+
             </div>
+
         </div>
+
     </footer>
+
+    <script>
+        const loginBtn = document.getElementById("loginBtn");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const loginMessage = document.getElementById("loginMessage");
+        const showPassword = document.getElementById("showPassword");
+        const remember = document.getElementById("remember");
+
+        // HIỆN / ẨN MẬT KHẨU
+        showPassword.addEventListener("click", function () {
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+
+        });
+
+        // ĐĂNG NHẬP
+        function login() {
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            loginMessage.textContent = "";
+
+            // KIỂM TRA RỖNG
+            if (username === "" || password === "") {
+
+                alert("Đăng nhập thất bại!\nVui lòng nhập đầy đủ tài khoản và mật khẩu.");
+
+                loginMessage.textContent =
+                    "Vui lòng nhập đầy đủ tài khoản và mật khẩu.";
+
+                loginMessage.className =
+                    "text-center text-[13px] mt-[12px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+            // =========================
+            // ADMIN
+            // =========================
+            if (
+                username === "admin@gmail.com" &&
+                password === "admin123"
+            ) {
+
+                localStorage.setItem("loginStatus", "true");
+                localStorage.setItem("userRole", "admin");
+                localStorage.setItem("username", "Admin");
+                localStorage.setItem("userEmail", username);
+
+                if (remember.checked) {
+                    localStorage.setItem("rememberLogin", "true");
+                } else {
+                    localStorage.removeItem("rememberLogin");
+                }
+
+                alert("Đăng nhập thành công!\nXin chào Admin.");
+
+                loginMessage.textContent =
+                    "Đăng nhập Admin thành công!";
+
+                loginMessage.className =
+                    "text-center text-[13px] mt-[12px] min-h-[20px] text-green-400";
+
+                setTimeout(function () {
+                    window.location.href = "admin.html";
+                }, 500);
+
+                return;
+            }
+
+            // =========================
+            // CUSTOMER
+            // =========================
+            if (
+                username === "user@gmail.com" &&
+                password === "123456"
+            ) {
+
+                localStorage.setItem("loginStatus", "true");
+                localStorage.setItem("userRole", "customer");
+                localStorage.setItem("username", "User");
+                localStorage.setItem("userEmail", username);
+
+                if (remember.checked) {
+                    localStorage.setItem("rememberLogin", "true");
+                } else {
+                    localStorage.removeItem("rememberLogin");
+                }
+
+                alert("Đăng nhập thành công!\nChào mừng bạn đến với APEX AUTOMOTIVE.");
+
+                loginMessage.textContent =
+                    "Đăng nhập thành công!";
+
+                loginMessage.className =
+                    "text-center text-[13px] mt-[12px] min-h-[20px] text-green-400";
+
+                setTimeout(function () {
+                    window.location.href = "user.html";
+                }, 500);
+
+                return;
+            }
+
+            // SAI TÀI KHOẢN / MẬT KHẨU
+            alert("Đăng nhập thất bại!\nTài khoản hoặc mật khẩu không chính xác.");
+
+            loginMessage.textContent =
+                "Tài khoản hoặc mật khẩu không chính xác.";
+
+            loginMessage.className =
+                "text-center text-[13px] mt-[12px] min-h-[20px] text-red-400";
+        }
+
+        // CLICK ĐĂNG NHẬP
+        loginBtn.addEventListener("click", login);
+
+        // ENTER Ở EMAIL
+        usernameInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                login();
+            }
+
+        });
+
+        // ENTER Ở PASSWORD
+        passwordInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                login();
+            }
+
+        });
+    </script>
+
 </body>
+
 </html>
