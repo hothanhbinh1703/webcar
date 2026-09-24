@@ -596,7 +596,7 @@
                     mileage: 1250, body: "Coupe", transmission: "7-Speed PDK", engine: "4.0L Flat-6", drivetrain: "RWD",
                     acceleration: "2.9 S",
                     image: "https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1153_a5_rgb.jpg",
-                    details: "HTML/RacingPorche.html", status: "Available", inventoryStatus: "New arrival"
+                    details: "RacingPorche.html", status: "Available", inventoryStatus: "New arrival"
                 },
                 {
                     id: 2, brand: "McLaren", model: "720S Spider", title: "2023 McLaren 720S Spider",
@@ -656,7 +656,7 @@
             }
 
             function createCard(vehicle) {
-                const linkHref = vehicle.details && vehicle.details !== "#" ? vehicle.details : "#";
+                const linkHref = vehicle.details && vehicle.details !== "#" ? "HTML/" + vehicle.details : "#";
                 const soldBadge = vehicle.status === "Sold"
                     ? `<div class="absolute inset-0 bg-black/60 flex items-center justify-center">
                            <span class="text-[#E2E2E2] text-[18px] font-bold uppercase tracking-[2px] border border-[#E2E2E2] px-[16px] py-[6px]">Sold</span>
