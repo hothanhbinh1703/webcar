@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles | APEX AUTOMOTIVE — Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&family=Space+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ["Inter"],
+                        jakarta: ["Plus Jakarta Sans"],
+                        mono: ["Space Mono"]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="bg-[#0d0e11] text-[#e3e2e5] font-inter antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#111314] border-b border-[#444748]/40">
+        <div class="h-full px-[28px] flex items-center justify-between">
+
+            <a href="admin.html" class="flex items-center gap-[10px]">
+                <img src="../IMG/logo.png" alt="Logo" class="w-[48px] h-[48px] rounded-[8px]">
+
+                <div>
+                    <h1 class="font-jakarta font-bold text-[18px] text-white">APEX AUTOMOTIVE</h1>
+                    <p class="font-mono text-[9px] tracking-[2px] text-[#8e9192] uppercase">Administration</p>
+                </div>
+            </a>
+
+            <button id="logoutBtn" class="flex items-center gap-[7px] text-[#c4c7c8] hover:text-white transition">
+                <span class="material-symbols-outlined text-[19px]">logout</span>
+                <span class="text-[13px]">Logout</span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <aside class="fixed top-[72px] left-0 bottom-0 w-[230px] bg-[#111314] border-r border-[#444748]/30 hidden lg:block">
+
+        <div class="p-[16px]">
+
+            <p class="font-mono text-[9px] text-[#8e9192] uppercase tracking-[2px] px-[12px] mb-[10px]">
+                Management
+            </p>
+
+            <nav class="flex flex-col gap-[4px]">
+
+                <a href="admin.html"
+                    class="flex items-center gap-[12px] px-[12px] py-[11px] rounded-[7px] text-[#8e9192] hover:text-white hover:bg-[#1e2022] transition">
+                    <span class="material-symbols-outlined text-[19px]">dashboard</span>
+                    <span class="text-[13px]">Dashboard</span>
+                </a>
+
+                <a href="vehicles.html"
+                    class="flex items-center gap-[12px] px-[12px] py-[11px] rounded-[7px] bg-[#292a2d] text-white">
+                    <span class="material-symbols-outlined text-[19px]">directions_car</span>
+                    <span class="text-[13px] font-medium">Vehicles</span>
+                    <span id="sidebarCount" class="ml-auto font-mono text-[10px] text-[#8e9192]">0</span>
+                </a>
+
+                <a href="inventory.html"
+                    class="flex items-center gap-[12px] px-[12px] py-[11px] rounded-[7px] text-[#8e9192] hover:text-white hover:bg-[#1e2022] transition">
+                    <span class="material-symbols-outlined text-[19px]">inventory_2</span>
+                    <span class="text-[13px]">Public Inventory</span>
+                </a>
+
+            </nav>
+
+            <div class="h-[1px] bg-[#444748]/30 my-[18px]"></div>
+
+            <p class="font-mono text-[9px] text-[#8e9192] uppercase tracking-[2px] px-[12px] mb-[10px]">
+                System
+            </p>
+
+            <a href="admin.html"
+                class="flex items-center gap-[12px] px-[12px] py-[11px] rounded-[7px] text-[#8e9192] hover:text-white hover:bg-[#1e2022] transition">
+                <span class="material-symbols-outlined text-[19px]">settings</span>
+                <span class="text-[13px]">Dashboard</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="lg:ml-[230px] pt-[72px] min-h-screen">
+
+        <div class="p-[24px] md:p-[32px] max-w-[1600px] mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-[20px] mb-[28px]">
+
+                <div>
+                    <div class="flex items-center gap-[8px] mb-[8px]">
+                        <span class="w-[7px] h-[7px] rounded-full bg-white"></span>
+                        <span class="font-mono text-[10px] tracking-[2px] text-[#8e9192] uppercase">
+                            Vehicle Management
+                        </span>
+                    </div>
+
+                    <h1 class="font-jakarta font-bold text-[32px] text-white tracking-[-1px]">
+                        Vehicles
+                    </h1>
+
+                    <p class="text-[13px] text-[#8e9192] mt-[5px]">
+                        Quản lý toàn bộ xe. Dữ liệu được đồng bộ trực tiếp với Inventory.
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-[10px]">
+
+                    <button id="restoreDefaultsBtn"
+                        class="flex items-center gap-[8px] px-[16px] py-[11px] bg-[#1a1c1e] border border-[#444748]/50 text-[#c4c7c8] rounded-[7px] font-semibold text-[13px] hover:text-white transition">
+                        <span class="material-symbols-outlined text-[18px]">restart_alt</span>
+                        Khôi phục 4 xe
+                    </button>
+
+                    <button id="addVehicleBtn"
+                        class="flex items-center gap-[8px] px-[18px] py-[11px] bg-white text-[#121316] rounded-[7px] font-semibold text-[13px] hover:bg-[#e2e2e2] transition">
+                        <span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Vehicle
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-[12px] mb-[24px]">
+
+                <div class="bg-[#1a1c1e] rounded-[9px] p-[18px] border border-[#444748]/30">
+                    <p class="font-mono text-[9px] tracking-[1.5px] text-[#8e9192] uppercase">Total Vehicles</p>
+                    <p id="totalVehicles" class="font-mono font-bold text-[24px] text-white mt-[8px]">0</p>
+                </div>
+
+                <div class="bg-[#1a1c1e] rounded-[9px] p-[18px] border border-[#444748]/30">
+                    <p class="font-mono text-[9px] tracking-[1.5px] text-[#8e9192] uppercase">Available</p>
+                    <p id="availableVehicles" class="font-mono font-bold text-[24px] text-white mt-[8px]">0</p>
+                </div>
+
+                <div class="bg-[#1a1c1e] rounded-[9px] p-[18px] border border-[#444748]/30">
+                    <p class="font-mono text-[9px] tracking-[1.5px] text-[#8e9192] uppercase">Sold</p>
+                    <p id="soldVehicles" class="font-mono font-bold text-[24px] text-white mt-[8px]">0</p>
+                </div>
+
+                <div class="bg-[#1a1c1e] rounded-[9px] p-[18px] border border-[#444748]/30">
+                    <p class="font-mono text-[9px] tracking-[1.5px] text-[#8e9192] uppercase">Brands</p>
+                    <p id="totalBrands" class="font-mono font-bold text-[24px] text-white mt-[8px]">0</p>
+                </div>
+
+                <div class="bg-[#1a1c1e] rounded-[9px] p-[18px] border border-[#444748]/30">
+                    <p class="font-mono text-[9px] tracking-[1.5px] text-[#8e9192] uppercase">Profit</p>
+                    <p id="totalProfit" class="font-mono font-bold text-[24px] text-white mt-[8px]">$0</p>
+                </div>
+
+            </div>
+
+
+            <div class="bg-[#1a1c1e] rounded-[9px] border border-[#444748]/30 p-[14px] mb-[18px]">
+
+                <div class="flex flex-col lg:flex-row gap-[10px]">
+
+                    <div class="relative flex-1">
+
+                        <span
+                            class="material-symbols-outlined absolute left-[12px] top-1/2 -translate-y-1/2 text-[18px] text-[#8e9192]">
+                            search
+                        </span>
+
+                        <input id="searchInput" type="text" placeholder="Search brand or model..."
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] pl-[40px] pr-[12px] text-[13px] text-white placeholder:text-[#8e9192] focus:outline-none focus:border-white">
+
+                    </div>
+
+                    <select id="brandFilter"
+                        class="h-[42px] lg:w-[180px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[12px] text-[#c4c7c8] focus:outline-none focus:border-white">
+                        <option value="all">All Brands</option>
+                    </select>
+
+                    <select id="statusFilter"
+                        class="h-[42px] lg:w-[160px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[12px] text-[#c4c7c8] focus:outline-none focus:border-white">
+                        <option value="all">All Status</option>
+                        <option value="Available">Available</option>
+                        <option value="Sold">Sold</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-[#1a1c1e] rounded-[9px] border border-[#444748]/30 overflow-hidden">
+
+                <div class="overflow-x-auto">
+
+                    <table class="w-full min-w-[1200px]">
+
+                        <thead class="bg-[#121316] border-b border-[#444748]/40">
+
+                            <tr>
+
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Vehicle</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Year</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Price</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Cost</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Profit</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Mileage</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Body</th>
+                                <th class="text-left px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Status</th>
+                                <th
+                                    class="text-right px-[18px] py-[13px] font-mono text-[9px] uppercase text-[#8e9192]">
+                                    Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="vehicleTable" class="divide-y divide-[#444748]/20"></tbody>
+
+                    </table>
+
+                </div>
+
+                <div id="emptyTable" class="hidden py-[60px] text-center">
+                    <span class="material-symbols-outlined text-[38px] text-[#444748]">directions_car</span>
+                    <p class="text-[14px] text-white mt-[10px]">No vehicles found</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div id="vehicleModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 backdrop-blur-sm p-[16px]">
+
+        <div
+            class="w-full max-w-[850px] max-h-[92vh] overflow-y-auto bg-[#1a1c1e] border border-[#444748]/50 rounded-[10px]">
+
+            <div
+                class="sticky top-0 z-10 flex items-center justify-between px-[22px] py-[17px] bg-[#1a1c1e] border-b border-[#444748]/30">
+
+                <div>
+                    <p class="font-mono text-[9px] tracking-[2px] text-[#8e9192] uppercase">Vehicle Management</p>
+                    <h2 id="modalTitle" class="font-jakarta font-bold text-[21px] text-white mt-[3px]">Add Vehicle</h2>
+                </div>
+
+                <button id="closeModal"
+                    class="w-[34px] h-[34px] rounded-[6px] flex items-center justify-center text-[#8e9192] hover:text-white hover:bg-[#292a2d]">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+
+            </div>
+
+
+            <form id="vehicleForm" class="p-[22px]">
+
+                <input type="hidden" id="vehicleId">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-[13px]">
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Brand</label>
+                        <select id="brand" required
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                            <option value="">Select brand</option>
+                            <option>Porsche</option>
+                            <option>McLaren</option>
+                            <option>Aston Martin</option>
+                            <option>Ferrari</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Model</label>
+                        <input id="model" required type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Year</label>
+                        <input id="year" required type="number"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Price USD</label>
+                        <input id="price" required type="number" min="0"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Cost Price USD</label>
+                        <input id="costPrice" type="number" min="0"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Mileage</label>
+                        <input id="mileage" type="number" min="0"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Body</label>
+                        <select id="body"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                            <option>Coupe</option>
+                            <option>Convertible</option>
+                            <option>SUV</option>
+                            <option>Sedan</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Status</label>
+                        <select id="status"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                            <option value="Available">Available</option>
+                            <option value="Sold">Sold</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Subtitle</label>
+                        <input id="subtitle" type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Transmission</label>
+                        <input id="transmission" type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Engine</label>
+                        <input id="engine" type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Drivetrain</label>
+                        <input id="drivetrain" type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">0-100 km/h</label>
+                        <input id="acceleration" type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Image URL</label>
+                        <input id="image" type="url"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Details Page</label>
+                        <input id="details" type="text" placeholder="RacingPorche.html"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Inventory Label</label>
+                        <select id="inventoryStatus"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                            <option>New arrival</option>
+                            <option>In stock</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] text-[#c4c7c8] mb-[6px]">Internal Notes</label>
+                        <input id="internalNotes" type="text"
+                            class="w-full h-[42px] bg-[#121316] border border-[#444748]/50 rounded-[7px] px-[12px] text-[13px] text-white">
+                    </div>
+
+                </div>
+
+
+                <div class="flex justify-end gap-[10px] mt-[24px] pt-[18px] border-t border-[#444748]/30">
+
+                    <button type="button" id="cancelBtn"
+                        class="px-[17px] py-[10px] rounded-[7px] bg-[#292a2d] text-[#c4c7c8] text-[13px]">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                        class="px-[18px] py-[10px] rounded-[7px] bg-white text-[#121316] text-[13px] font-semibold">
+                        Save Vehicle
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const VEHICLE_STORAGE_KEY = "vehicles";
+        const TRASH_STORAGE_KEY = "vehicles_trash";
+
+
+        const defaultVehicles = [
+
+            {
+                id: 1,
+                brand: "Porsche",
+                model: "911 GT3 RS",
+                title: "2024 Porsche 911 GT3 RS",
+                subtitle: "Agate Grey Metallic / Race-Tex Interior",
+                year: 2024,
+                price: 295000,
+                costPrice: 250000,
+                mileage: 1250,
+                body: "Coupe",
+                transmission: "7-Speed PDK",
+                engine: "4.0L Flat-6",
+                drivetrain: "RWD",
+                acceleration: "3.2s",
+                image: "https://porsche-vietnam.vn/wp-content/uploads/2018/02/P17_1153_a5_rgb.jpg",
+                details: "RacingPorche.html",
+                status: "Available",
+                inventoryStatus: "New arrival",
+                internalNotes: "Xe trưng bày, đã kiểm tra kỹ thuật đầy đủ"
+            },
+
+            {
+                id: 2,
+                brand: "McLaren",
+                model: "720S Spider",
+                title: "2023 McLaren 720S Spider",
+                subtitle: "Silica White / Jet Black Alcantara",
+                year: 2023,
+                price: 310500,
+                costPrice: 265000,
+                mileage: 3400,
+                body: "Convertible",
+                transmission: "7-Speed SSG",
+                engine: "4.0L Twin-Turbo V8",
+                drivetrain: "RWD",
+                acceleration: "2.9s",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpjdlYLOVvMQKgKFPPx9r1vsNH_PjNi9JeGHhFRMW4xE8aJ0MDYDXJnk&s=10",
+                details: "#",
+                status: "Available",
+                inventoryStatus: "New arrival",
+                internalNotes: "Nhập từ đại lý ủy quyền, còn bảo hành"
+            },
+
+            {
+                id: 3,
+                brand: "Aston Martin",
+                model: "DBS",
+                title: "2022 Aston Martin DBS",
+                subtitle: "Minotaur Green / Bitter Chocolate",
+                year: 2022,
+                price: 275000,
+                costPrice: 230000,
+                mileage: 8100,
+                body: "Coupe",
+                transmission: "8-Speed Auto",
+                engine: "5.2L Twin-Turbo V12",
+                drivetrain: "RWD",
+                acceleration: "3.4s",
+                image: "https://4kwallpapers.com/images/wallpapers/aston-martin-dbs-3840x2160-10165.jpeg",
+                details: "#",
+                status: "Available",
+                inventoryStatus: "In stock",
+                internalNotes: "Xe cũ đã qua sử dụng"
+            },
+
+            {
+                id: 4,
+                brand: "Ferrari",
+                model: "F8 Tributo",
+                title: "2021 Ferrari F8 Tributo",
+                subtitle: "Rosso Corsa / Nero Leather",
+                year: 2021,
+                price: 295000,
+                costPrice: 245000,
+                mileage: 4200,
+                body: "Coupe",
+                transmission: "7-Speed Dual-Clutch",
+                engine: "4.0L Flat-6",
+                drivetrain: "RWD",
+                acceleration: "2.9s",
+                image: "https://www.cauleyferrari.com/imagetag/449/55/l/Used-2021-Ferrari-F8-Tributo-1663763281.jpg",
+                details: "#",
+                status: "Available",
+                inventoryStatus: "In stock",
+                internalNotes: "Đã bảo dưỡng định kỳ"
+            }
+
+        ];
+
+
+        function getVehicles() {
+
+            const saved = localStorage.getItem(VEHICLE_STORAGE_KEY);
+
+            if (!saved) {
+                localStorage.setItem(VEHICLE_STORAGE_KEY, JSON.stringify(defaultVehicles));
+                return [...defaultVehicles];
+            }
+
+            try {
+
+                const data = JSON.parse(saved);
+
+                if (!Array.isArray(data)) throw new Error();
+
+                return data;
+
+            } catch {
+
+                localStorage.setItem(VEHICLE_STORAGE_KEY, JSON.stringify(defaultVehicles));
+
+                return [...defaultVehicles];
+
+            }
+
+        }
+
+
+        function saveVehicles(data) {
+            localStorage.setItem(VEHICLE_STORAGE_KEY, JSON.stringify(data));
+        }
+
+
+        function getTrash() {
+
+            try {
+
+                const data = JSON.parse(localStorage.getItem(TRASH_STORAGE_KEY) || "[]");
+
+                return Array.isArray(data) ? data : [];
+
+            } catch {
+
+                return [];
+
+            }
+
+        }
+
+
+        function saveTrash(data) {
+            localStorage.setItem(TRASH_STORAGE_KEY, JSON.stringify(data));
+        }
+
+
+        function money(value) {
+            return "$" + Number(value || 0).toLocaleString("en-US");
+        }
+
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        const table = document.getElementById("vehicleTable");
+        const searchInput = document.getElementById("searchInput");
+        const brandFilter = document.getElementById("brandFilter");
+        const statusFilter = document.getElementById("statusFilter");
+
+        let editingId = null;
+
+
+        function renderBrandFilter() {
+
+            const vehicles = getVehicles();
+            const current = brandFilter.value;
+
+            const brands = [...new Set(
+                vehicles.map(v => v.brand).filter(Boolean)
+            )].sort();
+
+            brandFilter.innerHTML =
+                `<option value="all">All Brands</option>` +
+                brands.map(brand =>
+                    `<option value="${escapeHTML(brand)}">${escapeHTML(brand)}</option>`
+                ).join("");
+
+            if (brands.includes(current)) {
+                brandFilter.value = current;
+            }
+
+        }
+
+
+        function updateStats(vehicles) {
+
+            const available = vehicles.filter(v => v.status === "Available");
+            const sold = vehicles.filter(v => v.status === "Sold");
+
+            const brands = new Set(
+                vehicles.map(v => v.brand).filter(Boolean)
+            );
+
+            const profit = vehicles.reduce(
+                (sum, v) => sum + ((Number(v.price) || 0) - (Number(v.costPrice) || 0)),
+                0
+            );
+
+            document.getElementById("totalVehicles").textContent = vehicles.length;
+            document.getElementById("availableVehicles").textContent = available.length;
+            document.getElementById("soldVehicles").textContent = sold.length;
+            document.getElementById("totalBrands").textContent = brands.size;
+            document.getElementById("totalProfit").textContent = money(profit);
+            document.getElementById("sidebarCount").textContent = vehicles.length;
+
+        }
+
+
+        function createRow(vehicle) {
+
+            const profit =
+                (Number(vehicle.price) || 0) -
+                (Number(vehicle.costPrice) || 0);
+
+            const statusClass =
+                vehicle.status === "Available"
+                    ? "bg-green-500/10 text-green-400"
+                    : "bg-red-500/10 text-red-400";
+
+            return `
+
+        <tr class="hover:bg-[#292a2d]/40 transition">
+
+            <td class="px-[18px] py-[14px]">
+
+                <div class="flex items-center gap-[12px]">
+
+                    <img src="${escapeHTML(vehicle.image)}"
+                        class="w-[72px] h-[48px] object-cover rounded-[5px] bg-[#121316]"
+                        onerror="this.style.opacity=0">
+
+                    <div>
+                        <p class="font-semibold text-[13px] text-white">
+                            ${escapeHTML(vehicle.brand)}
+                        </p>
+
+                        <p class="text-[12px] text-[#8e9192]">
+                            ${escapeHTML(vehicle.model)}
+                        </p>
+                    </div>
+
+                </div>
+
+            </td>
+
+            <td class="px-[18px] py-[14px] font-mono text-[12px]">
+                ${vehicle.year}
+            </td>
+
+            <td class="px-[18px] py-[14px] font-mono text-[12px] text-white">
+                ${money(vehicle.price)}
+            </td>
+
+            <td class="px-[18px] py-[14px] font-mono text-[12px]">
+                ${money(vehicle.costPrice)}
+            </td>
+
+            <td class="px-[18px] py-[14px] font-mono text-[12px] ${profit >= 0 ? "text-green-400" : "text-red-400"}">
+                ${money(profit)}
+            </td>
+
+            <td class="px-[18px] py-[14px] font-mono text-[12px]">
+                ${Number(vehicle.mileage || 0).toLocaleString("en-US")} mi
+            </td>
+
+            <td class="px-[18px] py-[14px] text-[12px]">
+                ${escapeHTML(vehicle.body || "N/A")}
+            </td>
+
+            <td class="px-[18px] py-[14px]">
+
+                <span class="inline-flex items-center gap-[6px] px-[8px] py-[5px] rounded-full ${statusClass} text-[10px] font-mono uppercase">
+
+                    <span class="w-[5px] h-[5px] rounded-full bg-current"></span>
+
+                    ${escapeHTML(vehicle.status)}
+
+                </span>
+
+            </td>
+
+            <td class="px-[18px] py-[14px]">
+
+                <div class="flex justify-end gap-[5px]">
+
+                    <button data-edit="${vehicle.id}" class="w-[34px] h-[34px] rounded-[6px] hover:bg-[#343538]">
+                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                    </button>
+
+                    <button data-delete="${vehicle.id}" class="w-[34px] h-[34px] rounded-[6px] hover:bg-red-500/10 hover:text-red-400">
+                        <span class="material-symbols-outlined text-[18px]">delete</span>
+                    </button>
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    `;
+
+        }
+
+
+        function renderVehicles() {
+
+            const vehicles = getVehicles();
+
+            renderBrandFilter();
+
+            const search = searchInput.value.trim().toLowerCase();
+            const selectedBrand = brandFilter.value;
+            const selectedStatus = statusFilter.value;
+
+            const filtered = vehicles.filter(vehicle => {
+
+                const text =
+                    `${vehicle.brand} ${vehicle.model} ${vehicle.title}`
+                        .toLowerCase();
+
+                return (
+                    (!search || text.includes(search)) &&
+                    (selectedBrand === "all" || vehicle.brand === selectedBrand) &&
+                    (selectedStatus === "all" || vehicle.status === selectedStatus)
+                );
+
+            });
+
+            table.innerHTML = filtered.map(createRow).join("");
+
+            document.getElementById("emptyTable")
+                .classList.toggle("hidden", filtered.length !== 0);
+
+            updateStats(vehicles);
+
+            document.querySelectorAll("[data-edit]").forEach(button => {
+
+                button.onclick = () =>
+                    editVehicle(Number(button.dataset.edit));
+
+            });
+
+            document.querySelectorAll("[data-delete]").forEach(button => {
+
+                button.onclick = () =>
+                    deleteVehicle(Number(button.dataset.delete));
+
+            });
+
+        }
+
+
+        function openModal() {
+
+            document.getElementById("vehicleModal").classList.remove("hidden");
+            document.getElementById("vehicleModal").classList.add("flex");
+
+        }
+
+
+        function closeModal() {
+
+            document.getElementById("vehicleModal").classList.add("hidden");
+            document.getElementById("vehicleModal").classList.remove("flex");
+
+            editingId = null;
+
+            document.getElementById("vehicleForm").reset();
+
+        }
+
+
+        document.getElementById("addVehicleBtn").onclick = () => {
+
+            editingId = null;
+
+            document.getElementById("modalTitle").textContent = "Add Vehicle";
+
+            document.getElementById("vehicleForm").reset();
+
+            document.getElementById("status").value = "Available";
+            document.getElementById("inventoryStatus").value = "In stock";
+
+            openModal();
+
+        };
+
+
+        function editVehicle(id) {
+
+            const vehicle = getVehicles()
+                .find(v => Number(v.id) === Number(id));
+
+            if (!vehicle) return;
+
+            editingId = id;
+
+            document.getElementById("modalTitle").textContent = "Edit Vehicle";
+
+            document.getElementById("brand").value = vehicle.brand || "";
+            document.getElementById("model").value = vehicle.model || "";
+            document.getElementById("year").value = vehicle.year || "";
+            document.getElementById("price").value = vehicle.price || "";
+            document.getElementById("costPrice").value = vehicle.costPrice || "";
+            document.getElementById("mileage").value = vehicle.mileage || "";
+            document.getElementById("body").value = vehicle.body || "Coupe";
+            document.getElementById("status").value = vehicle.status || "Available";
+            document.getElementById("subtitle").value = vehicle.subtitle || "";
+            document.getElementById("transmission").value = vehicle.transmission || "";
+            document.getElementById("engine").value = vehicle.engine || "";
+            document.getElementById("drivetrain").value = vehicle.drivetrain || "";
+            document.getElementById("acceleration").value = vehicle.acceleration || "";
+            document.getElementById("image").value = vehicle.image || "";
+            document.getElementById("details").value = vehicle.details || "#";
+            document.getElementById("inventoryStatus").value = vehicle.inventoryStatus || "In stock";
+            document.getElementById("internalNotes").value = vehicle.internalNotes || "";
+
+            openModal();
+
+        }
+
+
+        document.getElementById("vehicleForm").onsubmit = event => {
+
+            event.preventDefault();
+
+            const vehicles = getVehicles();
+
+            const data = {
+
+                brand: document.getElementById("brand").value,
+                model: document.getElementById("model").value,
+                year: Number(document.getElementById("year").value),
+                price: Number(document.getElementById("price").value),
+                costPrice: Number(document.getElementById("costPrice").value) || 0,
+                mileage: Number(document.getElementById("mileage").value) || 0,
+                body: document.getElementById("body").value,
+                status: document.getElementById("status").value,
+
+                title:
+                    `${document.getElementById("year").value} ${document.getElementById("brand").value} ${document.getElementById("model").value}`,
+
+                subtitle: document.getElementById("subtitle").value,
+                transmission: document.getElementById("transmission").value,
+                engine: document.getElementById("engine").value,
+                drivetrain: document.getElementById("drivetrain").value,
+                acceleration: document.getElementById("acceleration").value,
+                image: document.getElementById("image").value,
+                details: document.getElementById("details").value || "#",
+                inventoryStatus: document.getElementById("inventoryStatus").value,
+                internalNotes: document.getElementById("internalNotes").value
+
+            };
+
+
+            if (editingId !== null) {
+
+                const index = vehicles.findIndex(
+                    v => Number(v.id) === Number(editingId)
+                );
+
+                if (index !== -1) {
+
+                    vehicles[index] = {
+                        ...vehicles[index],
+                        ...data
+                    };
+
+                }
+
+            } else {
+
+                const newId = vehicles.length
+                    ? Math.max(...vehicles.map(v => Number(v.id) || 0)) + 1
+                    : 1;
+
+                vehicles.push({
+                    id: newId,
+                    ...data
+                });
+
+            }
+
+
+            saveVehicles(vehicles);
+
+            closeModal();
+
+            renderVehicles();
+
+        };
+
+
+        function deleteVehicle(id) {
+
+            const vehicles = getVehicles();
+
+            const vehicle = vehicles.find(
+                v => Number(v.id) === Number(id)
+            );
+
+            if (!vehicle) return;
+
+            if (!confirm(`Chuyển "${vehicle.title}" vào thùng rác?`)) {
+                return;
+            }
+
+            const trash = getTrash();
+
+            trash.push({
+                ...vehicle,
+                deletedAt: Date.now()
+            });
+
+            saveTrash(trash);
+
+            saveVehicles(
+                vehicles.filter(v => Number(v.id) !== Number(id))
+            );
+
+            renderVehicles();
+
+        }
+
+
+        document.getElementById("restoreDefaultsBtn").onclick = () => {
+
+            if (!confirm("Đưa danh sách về đúng 4 xe mặc định?")) return;
+
+            saveVehicles(
+                defaultVehicles.map(vehicle => ({ ...vehicle }))
+            );
+
+            renderVehicles();
+
+        };
+
+
+        document.getElementById("closeModal").onclick = closeModal;
+        document.getElementById("cancelBtn").onclick = closeModal;
+
+        searchInput.oninput = renderVehicles;
+        brandFilter.onchange = renderVehicles;
+        statusFilter.onchange = renderVehicles;
+
+
+        window.addEventListener("storage", event => {
+
+            if (event.key === VEHICLE_STORAGE_KEY) {
+                renderVehicles();
+            }
+
+        });
+
+
+        document.getElementById("logoutBtn").onclick = () => {
+
+            localStorage.removeItem("loginStatus");
+            localStorage.removeItem("userRole");
+            localStorage.removeItem("username");
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("rememberLogin");
+
+            window.location.href = "login.html";
+
+        };
+
+
+        renderVehicles();
+
+    </script>
+
+</body>
+
+</html>
